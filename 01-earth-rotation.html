@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="uz">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>地球自转 · 地方时与时区 · 3D 交互演示</title>
+<title>Yer aylanishi · Mahalliy vaqt va vaqt mintaqalari · 3D interaktiv namoyish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -389,71 +389,71 @@
     <div class="brand-block">
       <div class="brand-sub">Geographic Time · Module 01</div>
       <h1 class="brand-title">Earth <em>Rotation</em></h1>
-      <div style="font-size: 12px; color: var(--text-secondary); margin-top: 6px; line-height: 1.6;">地方时 · 时区 · 晨昏圈 · 自转方向</div>
+      <div style="font-size: 12px; color: var(--text-secondary); margin-top: 6px; line-height: 1.6;">Mahalliy vaqt · Vaqt mintaqasi · Yorug'lik-qorong'ulik chegarasi · Aylanish yo'nalishi</div>
     </div>
 
     <div class="section">
-      <div class="section-label">知识点</div>
+      <div class="section-label">Mavzular</div>
       <select class="kp-select" id="kp-select">
-        <option value="local-time">地方时与时区</option>
-        <option value="terminator">晨昏圈与昼夜</option>
-        <option value="rotation-direction">自转方向与偏向力</option>
-        <option value="tropics">回归线与极圈</option>
+        <option value="local-time">Mahalliy vaqt va vaqt mintaqalari</option>
+        <option value="terminator">Yorug'lik-qorong'ulik chegarasi va kun-tun</option>
+        <option value="rotation-direction">Aylanish yo'nalishi va og'ish kuchi</option>
+        <option value="tropics">Tropiklar va qutb doiralari</option>
       </select>
     </div>
 
     <div class="section">
-      <div class="section-label">自转速率</div>
+      <div class="section-label">Aylanish tezligi</div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label">演示倍率</span>
+          <span class="slider-label">Namoyish tezligi</span>
           <span class="slider-value" id="speed-value">30×</span>
         </div>
         <input type="range" id="speed" min="0" max="500" value="30" />
       </div>
       <div class="btn-row">
-        <button class="btn primary" id="btn-pause">暂停</button>
-        <button class="btn" id="btn-reset-view">重置视角</button>
+        <button class="btn primary" id="btn-pause">To'xtatish</button>
+        <button class="btn" id="btn-reset-view">Ko'rinishni tiklash</button>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">视角</div>
+      <div class="section-label">Ko'rinish</div>
       <div class="btn-row-3">
-        <button class="btn" data-view="north">北极俯视</button>
-        <button class="btn" data-view="side">侧视</button>
-        <button class="btn" data-view="south">南极俯视</button>
+        <button class="btn" data-view="north">Shim. qutbdan</button>
+        <button class="btn" data-view="side">Yon tomondan</button>
+        <button class="btn" data-view="south">Jan. qutbdan</button>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">可视化图层</div>
+      <div class="section-label">Vizual qatlamlar</div>
       <div class="check-grid">
-        <label class="check"><input type="checkbox" id="layer-sun" checked>太阳光线</label>
-        <label class="check"><input type="checkbox" id="layer-terminator" checked>晨昏圈</label>
-        <label class="check"><input type="checkbox" id="layer-graticule" checked>经纬网</label>
-        <label class="check"><input type="checkbox" id="layer-timezones">时区分界</label>
-        <label class="check"><input type="checkbox" id="layer-hourlabels" checked>地方时标签</label>
-        <label class="check"><input type="checkbox" id="layer-arrows" checked>自转方向</label>
-        <label class="check"><input type="checkbox" id="layer-tropics" checked>回归线</label>
-        <label class="check"><input type="checkbox" id="layer-poles" checked>南北极点</label>
-        <label class="check"><input type="checkbox" id="layer-clouds" checked>云层</label>
-        <label class="check"><input type="checkbox" id="layer-bloom" checked>辉光</label>
+        <label class="check"><input type="checkbox" id="layer-sun" checked>Quyosh nurlari</label>
+        <label class="check"><input type="checkbox" id="layer-terminator" checked>Yorug'lik-qorong'ulik chegarasi</label>
+        <label class="check"><input type="checkbox" id="layer-graticule" checked>Kenglik-uzunlik to'ri</label>
+        <label class="check"><input type="checkbox" id="layer-timezones">Vaqt mintaqasi chegaralari</label>
+        <label class="check"><input type="checkbox" id="layer-hourlabels" checked>Mahalliy vaqt yorliqlari</label>
+        <label class="check"><input type="checkbox" id="layer-arrows" checked>Aylanish yo'nalishi</label>
+        <label class="check"><input type="checkbox" id="layer-tropics" checked>Tropiklar</label>
+        <label class="check"><input type="checkbox" id="layer-poles" checked>Shimoliy va janubiy qutb</label>
+        <label class="check"><input type="checkbox" id="layer-clouds" checked>Bulut qatlami</label>
+        <label class="check"><input type="checkbox" id="layer-bloom" checked>Nurlanish effekti</label>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">参照城市</div>
+      <div class="section-label">Tanlangan shaharlar</div>
       <div class="check-grid" id="city-toggles">
         <!-- filled by JS -->
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">日期（直射纬度）</div>
+      <div class="section-label">Sana (tik tushish kengligi)</div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label" id="date-label">春分 3/21</span>
+          <span class="slider-label" id="date-label">Bahorgi tengkunlik 3/21</span>
           <span class="slider-value" id="decl-value">+0.0°</span>
         </div>
         <input type="range" id="doy" min="0" max="365" value="80" />
@@ -467,7 +467,7 @@
 
     <div class="kp-overlay" id="kp-overlay">
       <div class="kp-overlay-header">
-        <div class="kp-overlay-title">知识点解读</div>
+        <div class="kp-overlay-title">Mavzu tushuntirishi</div>
         <button class="kp-overlay-close" id="kp-close">—</button>
       </div>
       <div class="kp-overlay-body" id="kp-body"></div>
@@ -476,29 +476,29 @@
     <div class="top-badge">geo · time · spatial</div>
 
     <div class="scene-legend">
-      <div class="lg-item"><span class="lg-swatch" style="background:#f4a853"></span>太阳光线</div>
-      <div class="lg-item"><span class="lg-swatch" style="background:#e85d4a"></span>赤道</div>
-      <div class="lg-item"><span class="lg-swatch" style="background:#6db3d9"></span>晨昏圈</div>
-      <div class="lg-item"><span class="lg-swatch" style="background:rgba(255,255,255,0.4)"></span>经纬网</div>
+      <div class="lg-item"><span class="lg-swatch" style="background:#f4a853"></span>Quyosh nurlari</div>
+      <div class="lg-item"><span class="lg-swatch" style="background:#e85d4a"></span>Ekvator</div>
+      <div class="lg-item"><span class="lg-swatch" style="background:#6db3d9"></span>Yorug'lik-qorong'ulik chegarasi</div>
+      <div class="lg-item"><span class="lg-swatch" style="background:rgba(255,255,255,0.4)"></span>Kenglik-uzunlik to'ri</div>
     </div>
 
-    <div class="instruction">左键拖拽 · 滚轮缩放 · 右键平移</div>
+    <div class="instruction">Chap tugma: aylantirish · G'ildirak: masshtab · O'ng tugma: siljitish</div>
   </main>
 
   <!-- ============ RIGHT PANEL ============ -->
   <aside class="panel-right">
-    <h2 class="data-title">实时数据</h2>
+    <h2 class="data-title">Real vaqtli ma'lumotlar</h2>
 
     <div class="data-block">
-      <div class="data-row"><span class="data-label">UTC 时间</span><span class="data-value" id="utc-time">00:00:00</span></div>
-      <div class="data-row"><span class="data-label">太阳直射经度</span><span class="data-value accent" id="sun-lon">0.0°</span></div>
-      <div class="data-row"><span class="data-label">太阳直射纬度</span><span class="data-value hot" id="sun-lat">+0.0°</span></div>
-      <div class="data-row"><span class="data-label">自转方向</span><span class="data-value cool">自西向东</span></div>
-      <div class="data-row"><span class="data-label">偏向力（北半球）</span><span class="data-value">向右偏</span></div>
+      <div class="data-row"><span class="data-label">UTC vaqti</span><span class="data-value" id="utc-time">00:00:00</span></div>
+      <div class="data-row"><span class="data-label">Quyosh tik tushish uzunligi</span><span class="data-value accent" id="sun-lon">0.0°</span></div>
+      <div class="data-row"><span class="data-label">Quyosh tik tushish kengligi</span><span class="data-value hot" id="sun-lat">+0.0°</span></div>
+      <div class="data-row"><span class="data-label">Aylanish yo'nalishi</span><span class="data-value cool">G'arbdan sharqqa</span></div>
+      <div class="data-row"><span class="data-label">Og'ish kuchi (Shim. yarim shar)</span><span class="data-value">O'ngga og'adi</span></div>
     </div>
 
     <div class="data-block">
-      <div class="data-label" style="margin-bottom: 8px;">参照城市</div>
+      <div class="data-label" style="margin-bottom: 8px;">Tanlangan shaharlar</div>
       <div id="city-cards"></div>
     </div>
   </aside>
@@ -530,21 +530,21 @@ const RAD = 180 / Math.PI;
 
 // World cities: name, lat, lon, color
 const CITIES = [
-  { id:'shanghai', name:'上海', lat:31.2,  lon:121.5, color:'#7dc48a', on:true },
-  { id:'paris',    name:'巴黎', lat:48.9,  lon:2.4,   color:'#6db3d9', on:true },
-  { id:'cairo',    name:'开罗', lat:30.0,  lon:31.2,  color:'#f4a853', on:true },
-  { id:'newyork',  name:'纽约', lat:40.7,  lon:-74.0, color:'#e85d4a', on:false },
-  { id:'la',       name:'洛杉矶', lat:34.0, lon:-118.2, color:'#c478d9', on:false },
-  { id:'london',   name:'伦敦', lat:51.5,  lon:-0.1,  color:'#d9d478', on:false },
-  { id:'moscow',   name:'莫斯科', lat:55.8, lon:37.6, color:'#8a95a8', on:false },
-  { id:'sydney',   name:'悉尼', lat:-33.9, lon:151.2, color:'#d96db3', on:false },
+  { id:'shanghai', name:'Shanxay', lat:31.2,  lon:121.5, color:'#7dc48a', on:true },
+  { id:'paris',    name:'Parij', lat:48.9,  lon:2.4,   color:'#6db3d9', on:true },
+  { id:'cairo',    name:'Qohira', lat:30.0,  lon:31.2,  color:'#f4a853', on:true },
+  { id:'newyork',  name:'Nyu-York', lat:40.7,  lon:-74.0, color:'#e85d4a', on:false },
+  { id:'la',       name:'Los-Anjeles', lat:34.0, lon:-118.2, color:'#c478d9', on:false },
+  { id:'london',   name:'London', lat:51.5,  lon:-0.1,  color:'#d9d478', on:false },
+  { id:'moscow',   name:'Moskva', lat:55.8, lon:37.6, color:'#8a95a8', on:false },
+  { id:'sydney',   name:'Sidney', lat:-33.9, lon:151.2, color:'#d96db3', on:false },
 ];
 
 const KP_DOCS = {
-  'local-time': `<strong>地方时</strong>由经度决定：经度每相差 15°，地方时相差 1 小时；同一时刻东经地方时更早、西经更晚。为便于统一计时，全球划为 <strong>24 个时区</strong>，各时区采用本区中央经线的地方时作为区时（标准时）。0 时区以本初子午线附近（约 7.5°W–7.5°E）为核心，东 1 区到东 12 区，向西依次为西 1 区到西 12 区；相邻时区区时相差 1 小时。180° 附近设有国际日期变更线。`,
-  'terminator': `<strong>晨昏圈</strong>是地球上昼夜两半球的分界线，一个大圆。它始终与太阳光线垂直。地球自转时，晨昏圈相对地面自东向西移动——<strong>晨线</strong>（由夜转昼）上的地点此刻正在迎来日出，<strong>昏线</strong>（由昼转夜）上正在日落。二分日时晨昏圈过两极、平分所有纬线；二至日时它偏离两极约 23.5°。`,
-  'rotation-direction': `地球自转方向为<strong>自西向东</strong>。从北极上空俯视呈逆时针，从南极上空俯视呈顺时针——这就是教学中常说的"北逆南顺"。自转产生<strong>地转偏向力</strong>（科氏力）：北半球运动物体向右偏，南半球向左偏，赤道上无偏向。这一机制塑造了大气环流、洋流方向和河道冲刷不对称。`,
-  'tropics': `<strong>回归线</strong>是太阳直射点南北移动的极限纬线（±23.4°），对应夏至（北回归线）和冬至（南回归线）。回归线与赤道之间的区域一年中有两次太阳直射，回归线上一次，回归线之外无直射。<strong>极圈</strong>（±66.6°）是出现极昼极夜现象的最低纬度——从极圈到极点，极昼和极夜的持续时间从 1 天扩展到 6 个月。`,
+  'local-time': `<strong>Mahalliy vaqt</strong> geografik uzunlik bilan belgilanadi: har 15° uzunlik farqi uchun mahalliy vaqt 1 soatga farq qiladi; bir xil lahzada sharqiy uzunlikdagi mahalliy vaqt oldinroq, g'arbiy uzunlikdagi esa kechroq bo'ladi. Vaqtni yagona hisoblash uchun dunyo <strong>24 ta vaqt mintaqasiga</strong> bo'lingan, har bir mintaqa o'z markaziy meridianining mahalliy vaqtini mintaqa vaqti (standart vaqt) sifatida qabul qiladi. 0-mintaqa bosh meridian atrofida (taxminan 7,5°G–7,5°Sh) markazlashgan, sharqqa 1-dan 12-mintaqagacha, g'arbga esa 1-dan 12-mintaqagacha davom etadi; qo'shni mintaqalar orasida vaqt farqi 1 soat. 180° atrofida xalqaro sana chizig'i joylashgan.`,
+  'terminator': `<strong>Yorug'lik-qorong'ulik chegarasi</strong> — Yerdagi kunduzgi va tungi yarim sharlarni ajratib turuvchi chegara, katta doira. U doimo Quyosh nurlariga perpendikulyar bo'ladi. Yer aylanganda bu chegara yer yuzasiga nisbatan sharqdan g'arbga siljiydi — <strong>tong chizig'ida</strong> (tundan kunduzga o'tish) joylashgan joylarda hozir quyosh chiqmoqda, <strong>shom chizig'ida</strong> (kunduzdan tunga o'tish) esa quyosh botmoqda. Tengkunlik kunlarida bu chegara ikki qutbdan o'tib, barcha kengliklarni teng ikkiga bo'ladi; kunturish kunlarida u qutblardan taxminan 23,5° chetga chiqadi.`,
+  'rotation-direction': `Yer <strong>g'arbdan sharqqa</strong> aylanadi. Shimoliy qutbdan qaralganda soat strelkasiga teskari, janubiy qutbdan qaralganda esa soat strelkasi yo'nalishida ko'rinadi — bu darsliklarda ko'pincha "shimolda teskari, janubda to'g'ri" deb o'rgatiladi. Aylanish <strong>Yerning og'ish kuchini</strong> (Koriolis kuchini) hosil qiladi: shimoliy yarim sharda harakatlanayotgan jismlar o'ngga, janubiy yarim sharda chapga og'adi, ekvatorda esa og'ish bo'lmaydi. Bu mexanizm atmosfera aylanishi, okean oqimlari yo'nalishi va daryo o'zanlarining assimetrik yemirilishini belgilaydi.`,
+  'tropics': `<strong>Tropiklar</strong> — Quyosh tik tushish nuqtasining shimol-janub yo'nalishidagi eng chekka kengliklari (±23,4°), bular yozgi kunturishga (Shimoliy tropik) va qishki kunturishga (Janubiy tropik) mos keladi. Tropiklar va ekvator orasidagi hududda yiliga ikki marta Quyosh tik tushadi, tropiklarning o'zida bir marta, tropiklardan tashqarida esa umuman tik tushmaydi. <strong>Qutb doiralari</strong> (±66,6°) — qutb kunduzi va tuni hodisasi kuzatiladigan eng past kenglik: qutb doirasidan qutbgacha, qutb kunduzi va tunining davomiyligi 1 kundan 6 oygacha cho'ziladi.`,
 };
 
 // ====================== THREE SETUP ======================
@@ -920,7 +920,7 @@ for (let h = 0; h < 24; h++) {
   const x = R * Math.cos(lat * DEG) * Math.cos(lon * DEG);
   const y = R * Math.sin(lat * DEG);
   const z = R * Math.cos(lat * DEG) * Math.sin(lon * DEG);
-  const label = makeLabel(`${h}时`, '#f4a853', '10px');
+  const label = makeLabel(`${h}`, '#f4a853', '10px');
   label.position.set(x, y, z);
   hourLabelsGroup.add(label);
   hourLabels.push({ label, hour: h });
@@ -1145,7 +1145,7 @@ speedInput.addEventListener('input', () => {
 const pauseBtn = document.getElementById('btn-pause');
 pauseBtn.addEventListener('click', () => {
   state.paused = !state.paused;
-  pauseBtn.textContent = state.paused ? '继续' : '暂停';
+  pauseBtn.textContent = state.paused ? 'Davom etish' : "To'xtatish";
 });
 
 // Reset view
@@ -1216,8 +1216,8 @@ function dateFromDOY(doy) {
   const m = d.getMonth() + 1, day = d.getDate();
   // label with solar event if close
   const special = [
-    { doy: 80, name: '春分' }, { doy: 172, name: '夏至' },
-    { doy: 266, name: '秋分' }, { doy: 355, name: '冬至' }
+    { doy: 80, name: 'Bahorgi tengkunlik' }, { doy: 172, name: 'Yozgi kunturish' },
+    { doy: 266, name: 'Kuzgi tengkunlik' }, { doy: 355, name: 'Qishki kunturish' }
   ];
   let prefix = '';
   for (const s of special) {
@@ -1264,7 +1264,7 @@ function renderCityCards() {
       </div>
       <div class="city-time" id="ctime-${c.id}">—</div>
       <div class="city-meta">
-        <span>昼 <span id="cday-${c.id}">—</span>h</span>
+        <span>Kun <span id="cday-${c.id}">—</span>soat</span>
         <span>UTC<span id="cutc-${c.id}">—</span></span>
       </div>
     `;
@@ -1366,7 +1366,7 @@ function animate() {
   hourLabels.forEach(({ label, hour }) => {
     const localSec = localTimeFromUTC(state.simTime, hour * 15);
     const h = Math.floor(((localSec % 86400) + 86400) % 86400 / 3600);
-    label.element.textContent = `${h}时`;
+    label.element.textContent = `${h}`;
     // color: highlight solar noon (closest to subsolar)
     const diffToSun = Math.abs(((hour * 15 - subLon + 540) % 360) - 180);
     if (diffToSun < 10) label.element.style.color = '#e85d4a';
