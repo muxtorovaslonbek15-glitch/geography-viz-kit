@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="uz">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>影子朝向与长短 · 3D 交互演示</title>
+<title>Soyaning yo'nalishi va uzunligi · 3D interaktiv namoyish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -72,61 +72,61 @@
 <body>
 <div id="app">
   <aside class="panel-left">
-    <a class="back-link" href="./index.html">← 返回目录</a>
+    <a class="back-link" href="./index.html">← Mundarijaga qaytish</a>
     <div class="brand-block">
       <div class="brand-sub">Geographic Time · Module 04</div>
-      <h1 class="brand-title">影子<em>朝向与长短</em></h1>
-      <div style="font-size:12px;color:var(--text-secondary);margin-top:6px;line-height:1.6;">L = h / tan(H) · 正午影子方向规律</div>
+      <h1 class="brand-title">Soyaning <em>yo'nalishi va uzunligi</em></h1>
+      <div style="font-size:12px;color:var(--text-secondary);margin-top:6px;line-height:1.6;">L = h / tan(H) · Peshin soyasining yo'nalish qonuniyati</div>
     </div>
 
     <div class="section">
-      <div class="section-label">知识点</div>
+      <div class="section-label">Mavzular</div>
       <select class="kp-select" id="kp-select">
-        <option value="length">影长公式推导</option>
-        <option value="direction">朝向规律</option>
-        <option value="conflict">认知冲突：零影长</option>
+        <option value="length">Soya uzunligi formulasini chiqarish</option>
+        <option value="direction">Yo'nalish qonuniyati</option>
+        <option value="conflict">Kutilmagan holat: nol soya uzunligi</option>
       </select>
     </div>
 
     <div class="section">
-      <div class="section-label">观测纬度 φ</div>
+      <div class="section-label">Kuzatish kengligi φ</div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label" id="lat-name">北京 39.9°N</span>
+          <span class="slider-label" id="lat-name">Toshkent 39.9°N</span>
           <span class="slider-value" id="lat-val">+39.9°</span>
         </div>
         <input type="range" id="lat" min="-90" max="90" value="39.9" step="0.1" />
       </div>
       <div class="btn-row">
-        <button class="btn" data-lat="39.9">北京</button>
-        <button class="btn" data-lat="23.4">北回归线</button>
-        <button class="btn" data-lat="0">赤道</button>
-        <button class="btn" data-lat="-23.4">南回归线</button>
+        <button class="btn" data-lat="39.9">Toshkent</button>
+        <button class="btn" data-lat="23.4">Shim. tropik</button>
+        <button class="btn" data-lat="0">Ekvator</button>
+        <button class="btn" data-lat="-23.4">Jan. tropik</button>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">日期</div>
+      <div class="section-label">Sana</div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label" id="doy-name">春分</span>
+          <span class="slider-label" id="doy-name">Bahorgi tengkunlik</span>
           <span class="slider-value" id="decl-val">δ = +0.0°</span>
         </div>
         <input type="range" id="doy" min="0" max="365" value="80" />
       </div>
       <div class="btn-row">
-        <button class="btn" data-doy="80">春分</button>
-        <button class="btn" data-doy="172">夏至</button>
-        <button class="btn" data-doy="266">秋分</button>
-        <button class="btn" data-doy="355">冬至</button>
+        <button class="btn" data-doy="80">Bahorgi tengk.</button>
+        <button class="btn" data-doy="172">Yozgi kunt.</button>
+        <button class="btn" data-doy="266">Kuzgi tengk.</button>
+        <button class="btn" data-doy="355">Qishki kunt.</button>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">标杆高度 h</div>
+      <div class="section-label">Ustun balandligi h</div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label">标杆高度</span>
+          <span class="slider-label">Ustun balandligi</span>
           <span class="slider-value" id="pole-val">1.0 m</span>
         </div>
         <input type="range" id="pole-h" min="0.2" max="3" value="1" step="0.1" />
@@ -137,19 +137,19 @@
       <div class="formula-box">
         <div class="formula-text" id="formula-live">L = h / tan(H)</div>
         <div class="formula-sub">
-          L = 影子长度（m）<br>
-          h = 标杆高度（m）<br>
-          H = 正午太阳高度角<br>
-          H = 0° → 影子无限长（太阳在地平线）<br>
-          H = 90° → 影子长度为零
+          L = Soya uzunligi (m)<br>
+          h = Ustun balandligi (m)<br>
+          H = Peshin quyosh balandligi burchagi<br>
+          H = 0° → soya cheksiz uzun (Quyosh gorizontda)<br>
+          H = 90° → soya uzunligi nolga teng
         </div>
       </div>
     </div>
 
     <div class="section">
       <div class="btn-row">
-        <button class="btn primary" id="btn-reset">重置视角</button>
-        <button class="btn" id="btn-top">俯视</button>
+        <button class="btn primary" id="btn-reset">Ko'rinishni tiklash</button>
+        <button class="btn" id="btn-top">Tepadan</button>
       </div>
     </div>
   </aside>
@@ -158,40 +158,40 @@
     <canvas id="three-canvas"></canvas>
     <div class="kp-overlay" id="kp-overlay">
       <div class="kp-overlay-header">
-        <div class="kp-overlay-title">知识点解读</div>
+        <div class="kp-overlay-title">Mavzu tushuntirishi</div>
         <button class="kp-overlay-close" id="kp-close">—</button>
       </div>
       <div class="kp-overlay-body" id="kp-body"></div>
     </div>
     <div class="top-badge">geo · shadow · L = h/tan(H)</div>
-    <div class="instruction">左键拖拽 · 滚轮缩放</div>
+    <div class="instruction">Chap tugma: aylantirish · G'ildirak: masshtab</div>
   </main>
 
   <aside class="panel-right">
-    <h2 class="data-title">影子数据</h2>
+    <h2 class="data-title">Soya ma'lumotlari</h2>
     <div class="data-block">
       <div class="big-num" id="shadow-len">—</div>
-      <div class="big-label">正午影长 L (m)</div>
-      <div class="data-row"><span class="data-label">太阳高度角 H</span><span class="data-value accent" id="d-H">—</span></div>
-      <div class="data-row"><span class="data-label">标杆高度 h</span><span class="data-value" id="d-h">1.0 m</span></div>
-      <div class="data-row"><span class="data-label">直射纬度 δ</span><span class="data-value hot" id="d-decl">—</span></div>
-      <div class="data-row"><span class="data-label">观测纬度 φ</span><span class="data-value cool" id="d-lat">—</span></div>
+      <div class="big-label">Peshin soya uzunligi L (m)</div>
+      <div class="data-row"><span class="data-label">Quyosh balandligi burchagi H</span><span class="data-value accent" id="d-H">—</span></div>
+      <div class="data-row"><span class="data-label">Ustun balandligi h</span><span class="data-value" id="d-h">1.0 m</span></div>
+      <div class="data-row"><span class="data-label">Tik tushish kengligi δ</span><span class="data-value hot" id="d-decl">—</span></div>
+      <div class="data-row"><span class="data-label">Kuzatish kengligi φ</span><span class="data-value cool" id="d-lat">—</span></div>
     </div>
 
     <div class="data-block">
-      <div class="data-label" style="margin-bottom:10px;">影子朝向</div>
-      <div class="data-row"><span class="data-label">正午朝向</span><span class="data-value" id="d-dir">—</span></div>
-      <div class="data-row"><span class="data-label">判断规则</span><span class="data-value" style="font-size:11px;text-align:right;max-width:160px;" id="d-rule">—</span></div>
+      <div class="data-label" style="margin-bottom:10px;">Soya yo'nalishi</div>
+      <div class="data-row"><span class="data-label">Peshin yo'nalishi</span><span class="data-value" id="d-dir">—</span></div>
+      <div class="data-row"><span class="data-label">Aniqlash qoidasi</span><span class="data-value" style="font-size:11px;text-align:right;max-width:160px;" id="d-rule">—</span></div>
     </div>
 
     <div class="data-block">
-      <div class="data-label" style="margin-bottom:8px;">关键事实（认知冲突）</div>
+      <div class="data-label" style="margin-bottom:8px;">Muhim faktlar (kutilmagan holatlar)</div>
       <div style="font-size:11px;color:var(--text-secondary);line-height:1.8;">
-        <div>赤道春/秋分正午：H=90°<br><span style="color:var(--accent-warm)">→ 影长为零，无影子</span></div>
+        <div>Ekvatorda bahorgi/kuzgi tengkunlik peshinida: H=90°<br><span style="color:var(--accent-warm)">→ soya uzunligi nolga teng, soya yo'q</span></div>
         <br>
-        <div>南半球正午影朝正北<br><span style="color:var(--accent-cool)">→ 颠覆"影子朝北"误区</span></div>
+        <div>Janubiy yarim sharda peshin soyasi shimolga tushadi<br><span style="color:var(--accent-cool)">→ "soya doim shimolga tushadi" degan noto'g'ri tushunchani inkor etadi</span></div>
         <br>
-        <div>北回归线以北：正午影永远朝北<br>南回归线以南：正午影永远朝南<br>两回归线之间：随季节变朝向</div>
+        <div>Shim. tropikdan shimolda: peshin soyasi doim shimolga tushadi<br>Jan. tropikdan janubda: peshin soyasi doim janubga tushadi<br>Ikki tropik orasida: yo'nalish faslga qarab o'zgaradi</div>
       </div>
     </div>
   </aside>
@@ -218,9 +218,9 @@ const DEG = Math.PI / 180;
 const RAD = 180 / Math.PI;
 
 const KP_DOCS = {
-  'length': `<strong>影长公式</strong>：L = h / tan(H)，其中 L 是影长，h 是标杆高度，H 是正午太阳高度角。几何关系：标杆、影子、太阳光线构成一个直角三角形，标杆为竖直边（h），影子为水平边（L），光线为斜边，H 为光线与地平面的夹角，所以 tan(H) = h/L，即 L = h/tan(H)。H 越大（太阳越高），影子越短；H → 0°，影子趋于无穷长；<strong>H = 90° 时影长为零</strong>（太阳直射该地，标杆无影）。`,
-  'direction': `<strong>正午影子朝向规律</strong>：正午时太阳在子午线上（最高点），影子方向与太阳方向相反，必在子午线上，且<strong>背向太阳</strong>。<br><br>判断规则：若太阳在观测者正南（φ > δ），影子朝<strong>正北</strong>；若太阳在正北（φ < δ，太阳直射点在观测者以北），影子朝<strong>正南</strong>；φ = δ 时（太阳直射该地），H = 90°，无影子。<br><br><strong>南半球所有地区</strong>正午太阳必在正北，影子必朝正南。`,
-  'conflict': `<strong>认知冲突：零影长（赤道春秋分）</strong><br><br>把纬度设为 0°（赤道），日期设为春分（δ=0°）：<br>H = 90° − |0° − 0°| = <strong>90°</strong><br>L = h / tan(90°) = <strong>0</strong><br><br>此时太阳直接在头顶，标杆在地面上没有影子。这是地球上少数可能发生的天文现象。每年有两次（春分/秋分），仅在赤道上。回归线上有一次（对应直射日）。北回归线以北或南回归线以南的地区，<strong>永远不会出现零影</strong>。`,
+  'length': `<strong>Soya uzunligi formulasi</strong>: L = h / tan(H), bu yerda L — soya uzunligi, h — ustun balandligi, H — peshin quyosh balandligi burchagi. Geometrik munosabat: ustun, soya va quyosh nuri to'g'ri burchakli uchburchak hosil qiladi — ustun tik tomon (h), soya gorizontal tomon (L), nur gipotenuza, H esa nur bilan gorizont tekisligi orasidagi burchak, shuning uchun tan(H) = h/L, ya'ni L = h/tan(H). H qanchalik katta bo'lsa (Quyosh baland bo'lsa), soya shunchalik qisqa; H → 0° bo'lganda, soya cheksizlikka intiladi; <strong>H = 90° bo'lganda soya uzunligi nolga teng</strong> (Quyosh shu joyga tik tushadi, ustunning soyasi bo'lmaydi).`,
+  'direction': `<strong>Peshin soyasining yo'nalish qonuniyati</strong>: peshinda Quyosh meridianda (eng baland nuqtada) joylashadi, soyaning yo'nalishi Quyosh yo'nalishiga qarama-qarshi bo'lib, u ham meridianda, <strong>Quyoshga orqa tomonda</strong> joylashadi.<br><br>Aniqlash qoidasi: agar Quyosh kuzatuvchining aynan janubida bo'lsa (φ > δ), soya <strong>shimolga</strong> tushadi; agar Quyosh shimolda bo'lsa (φ < δ, tik tushish nuqtasi kuzatuvchidan shimolda), soya <strong>janubga</strong> tushadi; φ = δ bo'lganda (Quyosh shu joyga tik tushadi), H = 90°, soya bo'lmaydi.<br><br><strong>Janubiy yarim sharning barcha hududlarida</strong> peshin Quyoshi doimo shimolda bo'ladi, soya esa doimo janubga tushadi.`,
+  'conflict': `<strong>Kutilmagan holat: nol soya uzunligi (ekvatorda tengkunlik)</strong><br><br>Kenglikni 0° ga (ekvator) va sanani bahorgi tengkunlikka (δ=0°) qo'ysak:<br>H = 90° − |0° − 0°| = <strong>90°</strong><br>L = h / tan(90°) = <strong>0</strong><br><br>Bu paytda Quyosh aynan bosh ustida bo'ladi, ustunning yerdagi soyasi bo'lmaydi. Bu Yerda kamdan-kam yuz beradigan astronomik hodisadir. Yiliga ikki marta (bahorgi/kuzgi tengkunlik), faqat ekvatorda. Tropiklarda bir marta (tik tushish kuniga mos). Shimoliy tropikdan shimolda yoki Janubiy tropikdan janubda joylashgan hududlarda <strong>nol soya hech qachon yuz bermaydi</strong>.`,
 };
 
 // THREE SETUP
@@ -285,10 +285,10 @@ function makeLabel2D(text, color) {
   el.style.cssText = `color:${color};font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-shadow:0 0 8px rgba(0,0,0,.9);pointer-events:none;`;
   return new CSS2DObject(el);
 }
-const compassN = makeLabel2D('N 北', '#7dc48a'); compassN.position.set(0, 0.1, -3.5); scene.add(compassN);
-const compassS = makeLabel2D('S 南', '#e85d4a'); compassS.position.set(0, 0.1, 3.5); scene.add(compassS);
-const compassE = makeLabel2D('E 东', '#f4a853'); compassE.position.set(3.5, 0.1, 0); scene.add(compassE);
-const compassW = makeLabel2D('W 西', '#6db3d9'); compassW.position.set(-3.5, 0.1, 0); scene.add(compassW);
+const compassN = makeLabel2D('N Shimol', '#7dc48a'); compassN.position.set(0, 0.1, -3.5); scene.add(compassN);
+const compassS = makeLabel2D('S Janub', '#e85d4a'); compassS.position.set(0, 0.1, 3.5); scene.add(compassS);
+const compassE = makeLabel2D('E Sharq', '#f4a853'); compassE.position.set(3.5, 0.1, 0); scene.add(compassE);
+const compassW = makeLabel2D('W G\'arb', '#6db3d9'); compassW.position.set(-3.5, 0.1, 0); scene.add(compassW);
 
 // N-S axis line
 const nsLine = new THREE.Line(
@@ -343,13 +343,13 @@ const state = { lat: 39.9, doy: 80, poleH: 1.0 };
 function computeDecl(doy) { return 23.44 * Math.sin(2*Math.PI*(doy+284)/365.25); }
 function computeH(lat, decl) { return Math.max(0, 90 - Math.abs(lat - decl)); }
 function doyLabel(doy) {
-  const s=[{doy:80,n:'春分'},{doy:172,n:'夏至'},{doy:266,n:'秋分'},{doy:355,n:'冬至'}];
+  const s=[{doy:80,n:'Bahorgi tengk.'},{doy:172,n:'Yozgi kunt.'},{doy:266,n:'Kuzgi tengk.'},{doy:355,n:'Qishki kunt.'}];
   for(const x of s){if(Math.abs(doy-x.doy)<4)return x.n;}return'doy '+Math.round(doy);
 }
 function shadowDirection(lat, decl) {
-  if (Math.abs(lat - decl) < 0.5) return { dir: '无（正头顶）', rule: 'H=90°，太阳直射' };
-  if (lat > decl) return { dir: '正北 ↑', rule: 'φ > δ，太阳在正南，影指正北' };
-  return { dir: '正南 ↓', rule: 'φ < δ，太阳在正北，影指正南' };
+  if (Math.abs(lat - decl) < 0.5) return { dir: 'Yo\'q (bosh ustida)', rule: 'H=90°, Quyosh tik tushadi' };
+  if (lat > decl) return { dir: 'Shimol ↑', rule: 'φ > δ, Quyosh janubda, soya shimolga tushadi' };
+  return { dir: 'Janub ↓', rule: 'φ < δ, Quyosh shimolda, soya janubga tushadi' };
 }
 
 // Controls

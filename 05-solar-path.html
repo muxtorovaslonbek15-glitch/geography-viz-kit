@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="uz">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>太阳视运动 · 天球路径 · 3D 交互演示</title>
+<title>Quyoshning ko'rinma harakati · Osmon sferasi yo'li · 3D interaktiv namoyish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -69,63 +69,63 @@
 <body>
 <div id="app">
   <aside class="panel-left">
-    <a class="back-link" href="./index.html">← 返回目录</a>
+    <a class="back-link" href="./index.html">← Mundarijaga qaytish</a>
     <div class="brand-block">
       <div class="brand-sub">Geographic Time · Module 05</div>
-      <h1 class="brand-title">太阳<em>视运动</em></h1>
-      <div style="font-size:12px;color:var(--text-secondary);margin-top:6px;line-height:1.6;">天球穹顶 · 日出日落方位 · 正午高度 · 极昼轨迹</div>
+      <h1 class="brand-title">Quyoshning <em>ko'rinma harakati</em></h1>
+      <div style="font-size:12px;color:var(--text-secondary);margin-top:6px;line-height:1.6;">Osmon gumbazi · Quyosh chiqish-botish yo'nalishi · Peshin balandligi · Qutb kunduzi trayektoriyasi</div>
     </div>
 
     <div class="section">
-      <div class="section-label">知识点</div>
+      <div class="section-label">Mavzular</div>
       <select class="kp-select" id="kp-select">
-        <option value="path">太阳视运动路径</option>
-        <option value="azimuth">日出日落方位角</option>
-        <option value="polar">极昼极夜的天球轨迹</option>
+        <option value="path">Quyoshning ko'rinma harakati yo'li</option>
+        <option value="azimuth">Quyosh chiqish-botish azimutlari</option>
+        <option value="polar">Qutb kunduzi va tunining osmon trayektoriyasi</option>
       </select>
     </div>
 
     <div class="section">
-      <div class="section-label">观测纬度 φ（认知冲突）</div>
+      <div class="section-label">Kuzatish kengligi φ (tajriba)</div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label" id="lat-name">北京 39.9°N</span>
+          <span class="slider-label" id="lat-name">Toshkent 39.9°N</span>
           <span class="slider-value" id="lat-val">+39.9°</span>
         </div>
         <input type="range" id="lat" min="-90" max="90" value="39.9" step="0.5" />
       </div>
       <div class="btn-row">
-        <button class="btn" data-lat="90">北极 极昼</button>
-        <button class="btn" data-lat="66.6">北极圈</button>
-        <button class="btn" data-lat="39.9">北京</button>
-        <button class="btn" data-lat="23.4">北回归线</button>
-        <button class="btn" data-lat="0">赤道</button>
-        <button class="btn" data-lat="-30">南纬30°</button>
+        <button class="btn" data-lat="90">Shim. qutb (kunduz)</button>
+        <button class="btn" data-lat="66.6">Shim. qutb doirasi</button>
+        <button class="btn" data-lat="39.9">Toshkent</button>
+        <button class="btn" data-lat="23.4">Shim. tropik</button>
+        <button class="btn" data-lat="0">Ekvator</button>
+        <button class="btn" data-lat="-30">30°S</button>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">当前日期（δ）</div>
+      <div class="section-label">Joriy sana (δ)</div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label" id="doy-name">春分</span>
+          <span class="slider-label" id="doy-name">Bahorgi tengkunlik</span>
           <span class="slider-value" id="decl-val">δ = +0.0°</span>
         </div>
         <input type="range" id="doy" min="0" max="365" value="80" />
       </div>
       <div class="btn-row">
-        <button class="btn" data-doy="80">春分</button>
-        <button class="btn" data-doy="172">夏至</button>
-        <button class="btn" data-doy="266">秋分</button>
-        <button class="btn" data-doy="355">冬至</button>
+        <button class="btn" data-doy="80">Bahorgi tengk.</button>
+        <button class="btn" data-doy="172">Yozgi kunt.</button>
+        <button class="btn" data-doy="266">Kuzgi tengk.</button>
+        <button class="btn" data-doy="355">Qishki kunt.</button>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">时间（时角 H_angle）</div>
+      <div class="section-label">Vaqt (soat burchagi H_angle)</div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label" id="time-name">正午 12:00</span>
+          <span class="slider-label" id="time-name">Peshin 12:00</span>
           <span class="slider-value" id="time-val">H = 0°</span>
         </div>
         <input type="range" id="hour" min="0" max="24" value="12" step="0.1" />
@@ -133,21 +133,21 @@
     </div>
 
     <div class="section">
-      <div class="section-label">参考弧线</div>
+      <div class="section-label">Mos yoy chiziqlari</div>
       <div class="check-grid">
-        <label class="check"><input type="checkbox" id="arc-equinox" checked><span style="color:#6db3d9">二分日</span></label>
-        <label class="check"><input type="checkbox" id="arc-summer" checked><span style="color:#f4a853">夏至</span></label>
-        <label class="check"><input type="checkbox" id="arc-winter" checked><span style="color:#8a95a8">冬至</span></label>
-        <label class="check"><input type="checkbox" id="arc-today" checked><span style="color:#7dc48a">今日</span></label>
-        <label class="check"><input type="checkbox" id="show-horizon" checked>地平线</label>
-        <label class="check"><input type="checkbox" id="show-meridian" checked>子午圈</label>
+        <label class="check"><input type="checkbox" id="arc-equinox" checked><span style="color:#6db3d9">Tengkunlik</span></label>
+        <label class="check"><input type="checkbox" id="arc-summer" checked><span style="color:#f4a853">Yozgi kunt.</span></label>
+        <label class="check"><input type="checkbox" id="arc-winter" checked><span style="color:#8a95a8">Qishki kunt.</span></label>
+        <label class="check"><input type="checkbox" id="arc-today" checked><span style="color:#7dc48a">Bugun</span></label>
+        <label class="check"><input type="checkbox" id="show-horizon" checked>Gorizont</label>
+        <label class="check"><input type="checkbox" id="show-meridian" checked>Meridian doirasi</label>
       </div>
     </div>
 
     <div class="section">
       <div class="btn-row">
-        <button class="btn primary" id="btn-reset">重置视角</button>
-        <button class="btn" id="btn-top">天顶俯视</button>
+        <button class="btn primary" id="btn-reset">Ko'rinishni tiklash</button>
+        <button class="btn" id="btn-top">Zenitdan</button>
       </div>
     </div>
   </aside>
@@ -156,48 +156,48 @@
     <canvas id="three-canvas"></canvas>
     <div class="kp-overlay" id="kp-overlay">
       <div class="kp-overlay-header">
-        <div class="kp-overlay-title">知识点解读</div>
+        <div class="kp-overlay-title">Mavzu tushuntirishi</div>
         <button class="kp-overlay-close" id="kp-close">—</button>
       </div>
       <div class="kp-overlay-body" id="kp-body"></div>
     </div>
     <div class="top-badge">geo · solar path · celestial dome</div>
-    <div class="instruction">左键拖拽 · 滚轮缩放</div>
+    <div class="instruction">Chap tugma: aylantirish · G'ildirak: masshtab</div>
   </main>
 
   <aside class="panel-right">
-    <h2 class="data-title">太阳数据</h2>
+    <h2 class="data-title">Quyosh ma'lumotlari</h2>
     <div class="data-block">
-      <div class="data-row"><span class="data-label">当前高度角 h</span><span class="data-value accent" id="d-alt">—</span></div>
-      <div class="data-row"><span class="data-label">当前方位角 A</span><span class="data-value" id="d-az">—</span></div>
-      <div class="data-row"><span class="data-label">正午高度 H_noon</span><span class="data-value hot" id="d-noon">—</span></div>
-      <div class="data-row"><span class="data-label">时角 H_angle</span><span class="data-value cool" id="d-ha">—</span></div>
+      <div class="data-row"><span class="data-label">Joriy balandlik burchagi h</span><span class="data-value accent" id="d-alt">—</span></div>
+      <div class="data-row"><span class="data-label">Joriy azimut A</span><span class="data-value" id="d-az">—</span></div>
+      <div class="data-row"><span class="data-label">Peshin balandligi H_noon</span><span class="data-value hot" id="d-noon">—</span></div>
+      <div class="data-row"><span class="data-label">Soat burchagi H_angle</span><span class="data-value cool" id="d-ha">—</span></div>
     </div>
 
     <div class="data-block">
-      <div class="data-label" style="margin-bottom:10px;">今日（δ = <span id="d-decl-span">0.0°</span>）</div>
-      <div class="data-row"><span class="data-label">日出方位角</span><span class="data-value" id="d-rise-az">—</span></div>
-      <div class="data-row"><span class="data-label">日落方位角</span><span class="data-value" id="d-set-az">—</span></div>
-      <div class="data-row"><span class="data-label">昼长</span><span class="data-value" id="d-daylen">—</span></div>
-      <div class="data-row"><span class="data-label">极昼/极夜</span><span class="data-value" id="d-polar">—</span></div>
+      <div class="data-label" style="margin-bottom:10px;">Bugun (δ = <span id="d-decl-span">0.0°</span>)</div>
+      <div class="data-row"><span class="data-label">Quyosh chiqish azimuti</span><span class="data-value" id="d-rise-az">—</span></div>
+      <div class="data-row"><span class="data-label">Quyosh botish azimuti</span><span class="data-value" id="d-set-az">—</span></div>
+      <div class="data-row"><span class="data-label">Kun uzunligi</span><span class="data-value" id="d-daylen">—</span></div>
+      <div class="data-row"><span class="data-label">Qutb kunduzi/tuni</span><span class="data-value" id="d-polar">—</span></div>
     </div>
 
     <div class="data-block">
       <div class="arc-legend">
-        <div class="arc-item"><span class="arc-swatch" style="background:#6db3d9"></span>二分日弧（δ=0°）</div>
-        <div class="arc-item"><span class="arc-swatch" style="background:#f4a853"></span>夏至弧（δ=+23.4°）</div>
-        <div class="arc-item"><span class="arc-swatch" style="background:#8a95a8"></span>冬至弧（δ=−23.4°）</div>
-        <div class="arc-item"><span class="arc-swatch" style="background:#7dc48a"></span>今日弧（当前δ）</div>
-        <div class="arc-item"><span class="arc-swatch" style="background:#f4a853;opacity:.8"></span>当前太阳位置</div>
+        <div class="arc-item"><span class="arc-swatch" style="background:#6db3d9"></span>Tengkunlik yoyi (δ=0°)</div>
+        <div class="arc-item"><span class="arc-swatch" style="background:#f4a853"></span>Yozgi kunturish yoyi (δ=+23,4°)</div>
+        <div class="arc-item"><span class="arc-swatch" style="background:#8a95a8"></span>Qishki kunturish yoyi (δ=−23,4°)</div>
+        <div class="arc-item"><span class="arc-swatch" style="background:#7dc48a"></span>Bugungi yoy (joriy δ)</div>
+        <div class="arc-item"><span class="arc-swatch" style="background:#f4a853;opacity:.8"></span>Joriy Quyosh o'rni</div>
       </div>
     </div>
 
     <div class="data-block">
       <div style="font-size:11px;color:var(--text-secondary);line-height:1.8;">
-        <strong style="color:var(--text-primary)">认知冲突</strong><br>
-        把纬度拖到 <span style="color:var(--accent-warm)">90°N</span>，选夏至：<br>
-        太阳不落入地平线以下——在地平线以上绕一整圈（极昼轨迹）<br><br>
-        赤道春分：太阳正东升、正西落，正午直射头顶
+        <strong style="color:var(--text-primary)">Kutilmagan holat</strong><br>
+        Kenglikni <span style="color:var(--accent-warm)">90°N</span>ga torting, yozgi kunturishni tanlang:<br>
+        Quyosh gorizontdan pastga tushmaydi — gorizont ustida to'liq aylanib chiqadi (qutb kunduzi trayektoriyasi)<br><br>
+        Ekvatorda bahorgi tengkunlik: Quyosh aynan sharqdan chiqadi, aynan g'arbga botadi, peshinda bosh ustiga tik tushadi
       </div>
     </div>
   </aside>
@@ -225,9 +225,9 @@ const RAD = 180 / Math.PI;
 const DOME_R = 4.0;
 
 const KP_DOCS = {
-  'path': `<strong>太阳视运动</strong>：以观测者为中心，太阳在天球上的运动轨迹。地球自转（自西向东）导致太阳表观上自东向西移动；地球公转（黄赤交角）导致太阳路径随季节变化。<br><br>在天球穹顶视图中：太阳每天沿一条弧线从东方地平线升起，经过正午最高点（子午线），至西方落下。弧线的高低（正午高度 H）和起落方位取决于观测纬度 φ 和直射纬度 δ。`,
-  'azimuth': `<strong>日出日落方位角</strong>：方位角从正北顺时针量（N=0°, E=90°, S=180°, W=270°）。<br><br>计算：cos(A_rise) = (sin(δ) - sin(φ)·sin(h)) / (cos(φ)·cos(h))，日出时 h=0。<br><br>规律：<br>• δ > 0（直射北半球）：北半球东北升、西北落<br>• δ = 0（二分日）：正东升、正西落（全球适用）<br>• δ < 0（直射南半球）：北半球东南升、西南落<br><br>南半球方位角与北半球镜像对称。`,
-  'polar': `<strong>极昼极夜的天球轨迹</strong>（认知冲突核心）：<br><br>纬度 66.6°N（北极圈），夏至：太阳轨迹正好与地平线相切——24h 最低点恰好在地平线上，这是极昼的边界。<br><br>纬度 90°N（北极点），夏至：太阳以<strong>水平圆</strong>轨迹绕天空一圈，始终保持 23.4° 高度——既不升也不落！这是最纯粹的极昼图景，与直觉完全不同。<br><br>冬至时相反：北极圈以内的太阳轨迹整体落入地平线以下，无日出日落（极夜）。`,
+  'path': `<strong>Quyoshning ko'rinma harakati</strong>: kuzatuvchini markaz sifatida olganda, Quyoshning osmon sferasidagi harakat trayektoriyasi. Yerning o'z o'qi atrofida aylanishi (g'arbdan sharqqa) Quyoshning ko'rinma tarzda sharqdan g'arbga siljishiga sabab bo'ladi; Yerning Quyosh atrofida aylanib chiqishi (ekliptika og'ish burchagi) esa Quyosh yo'lining faslga qarab o'zgarishiga olib keladi.<br><br>Osmon gumbazi ko'rinishida: Quyosh har kuni sharqiy gorizontdan chiqib, peshinda eng baland nuqtadan (meridiandan) o'tib, g'arbda botadi. Yoyning balandligi (peshin balandligi H) va chiqish-botish yo'nalishi kuzatish kengligi φ va tik tushish kengligi δ ga bog'liq.`,
+  'azimuth': `<strong>Quyosh chiqish-botish azimutlari</strong>: azimut shimoldan soat strelkasi yo'nalishida o'lchanadi (N=0°, E=90°, S=180°, W=270°).<br><br>Hisoblash: cos(A_rise) = (sin(δ) - sin(φ)·sin(h)) / (cos(φ)·cos(h)), quyosh chiqishida h=0.<br><br>Qonuniyat:<br>• δ > 0 (Shim. yarim sharga tik tushish): Shim. yarim sharda shimoli-sharqdan chiqib, shimoli-g'arbga botadi<br>• δ = 0 (tengkunlik): aynan sharqdan chiqib, aynan g'arbga botadi (butun dunyoda amal qiladi)<br>• δ < 0 (Jan. yarim sharga tik tushish): Shim. yarim sharda janubi-sharqdan chiqib, janubi-g'arbga botadi<br><br>Janubiy yarim shar azimutlari Shimoliy yarim sharga oyna aksi kabi simmetrik.`,
+  'polar': `<strong>Qutb kunduzi va tunining osmon trayektoriyasi</strong> (asosiy tajriba):<br><br>66,6°N kenglikda (Shim. qutb doirasi), yozgi kunturishda: Quyosh trayektoriyasi gorizontga aynan tegib o'tadi — 24 soatlik eng past nuqta aynan gorizontda, bu qutb kunduzining chegarasidir.<br><br>90°N kenglikda (Shimoliy qutb), yozgi kunturishda: Quyosh <strong>gorizontal doira</strong> bo'ylab osmon bo'ylab to'liq aylanadi, doimo 23,4° balandlikda qoladi — na chiqadi, na botadi! Bu qutb kunduzining eng sof ko'rinishi bo'lib, kundalik tasavvurdan butunlay farq qiladi.<br><br>Qishki kunturishda esa aksincha: Shimoliy qutb doirasi ichidagi Quyosh trayektoriyasi to'liq gorizontdan pastda qoladi, quyosh chiqishi va botishi bo'lmaydi (qutb tuni).`,
 };
 
 // ── THREE SETUP ──────────────────────────────────────────────────────────────
@@ -303,11 +303,11 @@ for (let az = 0; az < 360; az += 45) {
 
 // Cardinal labels
 function makeL(text,color,pos){const el=document.createElement('div');el.textContent=text;el.style.cssText=`color:${color};font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-shadow:0 0 8px rgba(0,0,0,.9);pointer-events:none;`;const o=new CSS2DObject(el);o.position.copy(pos);scene.add(o);}
-makeL('N 北','#7dc48a',new THREE.Vector3(0,0.15,-DOME_R*0.95));
-makeL('S 南','#e85d4a',new THREE.Vector3(0,0.15,DOME_R*0.95));
-makeL('E 东','#f4a853',new THREE.Vector3(DOME_R*0.95,0.15,0));
-makeL('W 西','#6db3d9',new THREE.Vector3(-DOME_R*0.95,0.15,0));
-makeL('天顶 Z','#ffffff',new THREE.Vector3(0,DOME_R*0.9,0));
+makeL('N Shimol','#7dc48a',new THREE.Vector3(0,0.15,-DOME_R*0.95));
+makeL('S Janub','#e85d4a',new THREE.Vector3(0,0.15,DOME_R*0.95));
+makeL('E Sharq','#f4a853',new THREE.Vector3(DOME_R*0.95,0.15,0));
+makeL('W G\'arb','#6db3d9',new THREE.Vector3(-DOME_R*0.95,0.15,0));
+makeL('Zenit Z','#ffffff',new THREE.Vector3(0,DOME_R*0.9,0));
 
 // ── SUN PATH COMPUTATION ─────────────────────────────────────────────────────
 // Spherical astronomy: altitude h and azimuth A of sun given:
@@ -391,7 +391,7 @@ scene.add(riseMarker); scene.add(setMarker);
 // ── STATE ──────────────────────────────────────────────────────────────────
 const state = { lat: 39.9, doy: 80, hour: 12.0 };
 function computeDecl(doy){ return 23.44*Math.sin(2*Math.PI*(doy+284)/365.25); }
-function doyLabel(doy){const s=[{doy:80,n:'春分'},{doy:172,n:'夏至'},{doy:266,n:'秋分'},{doy:355,n:'冬至'}];for(const x of s){if(Math.abs(doy-x.doy)<4)return x.n;}return'doy '+Math.round(doy);}
+function doyLabel(doy){const s=[{doy:80,n:'Bahorgi tengk.'},{doy:172,n:'Yozgi kunt.'},{doy:266,n:'Kuzgi tengk.'},{doy:355,n:'Qishki kunt.'}];for(const x of s){if(Math.abs(doy-x.doy)<4)return x.n;}return'doy '+Math.round(doy);}
 function dayLengthHrs(phi, decl){const c=-Math.tan(phi*DEG)*Math.tan(decl*DEG);if(c<=-1)return 24;if(c>=1)return 0;return(2*Math.acos(c)*RAD)/15;}
 function riseAzimuth(phi, decl){const cA=(Math.sin(decl*DEG))/(Math.cos(phi*DEG)||1e-9);const A=Math.acos(Math.max(-1,Math.min(1,cA)))*RAD;return 90-A;}  // from North
 
@@ -465,22 +465,22 @@ function animate() {
 
   // Right panel
   document.getElementById('d-alt').textContent = alt.toFixed(1) + '°';
-  document.getElementById('d-az').textContent = az.toFixed(1) + '° (N顺)';
+  document.getElementById('d-az').textContent = az.toFixed(1) + '° (N dan soat yo\'nalishida)';
   const noonH = Math.max(0, 90 - Math.abs(lat - decl));
   document.getElementById('d-noon').textContent = noonH.toFixed(1) + '°';
   document.getElementById('d-ha').textContent = ha.toFixed(1) + '°';
   document.getElementById('d-decl-span').textContent = (decl>=0?'+':'')+decl.toFixed(1)+'°';
 
   if (dl === 24) {
-    document.getElementById('d-rise-az').textContent = '—（极昼）';
-    document.getElementById('d-set-az').textContent  = '—（极昼）';
-    document.getElementById('d-daylen').textContent = '24 h（极昼）';
-    document.getElementById('d-polar').textContent = '极昼 ☀️';
+    document.getElementById('d-rise-az').textContent = '— (qutb kunduzi)';
+    document.getElementById('d-set-az').textContent  = '— (qutb kunduzi)';
+    document.getElementById('d-daylen').textContent = '24 soat (qutb kunduzi)';
+    document.getElementById('d-polar').textContent = 'Qutb kunduzi ☀️';
   } else if (dl === 0) {
-    document.getElementById('d-rise-az').textContent = '—（极夜）';
-    document.getElementById('d-set-az').textContent  = '—（极夜）';
-    document.getElementById('d-daylen').textContent = '0 h（极夜）';
-    document.getElementById('d-polar').textContent = '极夜 🌑';
+    document.getElementById('d-rise-az').textContent = '— (qutb tuni)';
+    document.getElementById('d-set-az').textContent  = '— (qutb tuni)';
+    document.getElementById('d-daylen').textContent = '0 soat (qutb tuni)';
+    document.getElementById('d-polar').textContent = 'Qutb tuni 🌑';
   } else {
     const haRise = -(dl/2)*15, haSet = (dl/2)*15;
     const rD = sunPos(lat, decl, haRise), sD = sunPos(lat, decl, haSet);

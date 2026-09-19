@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="uz">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>磁层与太阳风 · 3D 交互演示</title>
+<title>Magnitosfera va quyosh shamoli · 3D interaktiv namoyish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -68,57 +68,57 @@
 <div id="app">
   <!-- LEFT PANEL -->
   <div class="panel-left">
-    <a class="back-link" href="./index.html">← 返回目录</a>
+    <a class="back-link" href="./index.html">← Mundarijaga qaytish</a>
     <div class="brand-block">
-      <div class="brand-title">磁层与<em>太阳风</em></div>
+      <div class="brand-title">Magnitosfera va <em>quyosh shamoli</em></div>
       <div class="brand-sub">Module 12 · Magnetosphere & Solar Wind</div>
     </div>
 
     <div class="section">
-      <div class="section-label">知识点</div>
+      <div class="section-label">Mavzular</div>
       <select class="kp-select" id="kp-sel">
-        <option value="solar_wind">太阳风：高能粒子流</option>
-        <option value="magnetosphere">地球磁层：太阳风的屏障</option>
-        <option value="aurora">极光的成因</option>
-        <option value="dipole">偶极磁场与磁力线</option>
-        <option value="kp">磁暴：Kp指数</option>
+        <option value="solar_wind">Quyosh shamoli: yuqori energiyali zarralar oqimi</option>
+        <option value="magnetosphere">Yer magnitosferasi: quyosh shamoliga to'siq</option>
+        <option value="aurora">Qutb yog'dusining sababi</option>
+        <option value="dipole">Dipol magnit maydoni va magnit chiziqlari</option>
+        <option value="kp">Magnit bo'ron: Kp indeksi</option>
       </select>
     </div>
 
     <div class="section">
-      <div class="section-label">太阳风强度</div>
+      <div class="section-label">Quyosh shamoli kuchi</div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label">Kp 磁暴指数</span>
+          <span class="slider-label">Kp magnit bo'ron indeksi</span>
           <span class="slider-value" id="kp-val">3</span>
         </div>
         <input type="range" id="sl-kp" min="0" max="9" value="3" step="1">
       </div>
       <div style="font-size:11px;color:var(--text-dim);margin-top:-6px;line-height:1.6;">
-        Kp≥5: 磁暴；Kp≥7: 强磁暴<br>
-        Kp越大，极光纬度越低（可达中纬度）
+        Kp≥5: magnit bo'ron; Kp≥7: kuchli magnit bo'ron<br>
+        Kp qanchalik katta bo'lsa, qutb yog'dusi kengligi shunchalik past bo'ladi (o'rta kengliklargacha yetishi mumkin)
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">图层</div>
+      <div class="section-label">Qatlamlar</div>
       <div class="check-grid">
-        <label class="check"><input type="checkbox" id="lyr-field" checked> 磁力线</label>
-        <label class="check"><input type="checkbox" id="lyr-wind" checked> 太阳风</label>
-        <label class="check"><input type="checkbox" id="lyr-aurora" checked> 极光卵</label>
-        <label class="check"><input type="checkbox" id="lyr-bow" checked> 弓形激波</label>
-        <label class="check"><input type="checkbox" id="lyr-tail" checked> 磁尾</label>
-        <label class="check"><input type="checkbox" id="lyr-earth" checked> 地球</label>
+        <label class="check"><input type="checkbox" id="lyr-field" checked> Magnit chiziqlari</label>
+        <label class="check"><input type="checkbox" id="lyr-wind" checked> Quyosh shamoli</label>
+        <label class="check"><input type="checkbox" id="lyr-aurora" checked> Qutb yog'dusi zonasi</label>
+        <label class="check"><input type="checkbox" id="lyr-bow" checked> Yoy zarbasi</label>
+        <label class="check"><input type="checkbox" id="lyr-tail" checked> Magnit dumi</label>
+        <label class="check"><input type="checkbox" id="lyr-earth" checked> Yer</label>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">参数</div>
+      <div class="section-label">Parametrlar</div>
       <div class="formula-box">
-        <div class="formula-text">弓形激波：~10–15 R⊕</div>
-        <div class="formula-text">磁层顶：日侧 ~10 R⊕</div>
-        <div class="formula-text">磁尾：夜侧 ~200 R⊕</div>
-        <div class="formula-sub">极光卵纬度：约65°–75°（宁静时）<br>磁暴时可降至45°甚至更低</div>
+        <div class="formula-text">Yoy zarbasi: ~10–15 R⊕</div>
+        <div class="formula-text">Magnitopauza: kunduzgi tomonda ~10 R⊕</div>
+        <div class="formula-text">Magnit dumi: tungi tomonda ~200 R⊕</div>
+        <div class="formula-sub">Qutb yog'dusi zonasi kengligi: taxminan 65°–75° (tinch holatda)<br>Magnit bo'ronda 45° gacha yoki undan pastga tushishi mumkin</div>
       </div>
     </div>
   </div>
@@ -128,7 +128,7 @@
     <canvas id="three-canvas"></canvas>
     <div class="kp-overlay" id="kp-overlay" hidden>
       <div class="kp-overlay-header">
-        <span class="kp-overlay-title">知识点说明</span>
+        <span class="kp-overlay-title">Mavzu tushuntirishi</span>
         <button class="kp-overlay-close" onclick="document.getElementById('kp-overlay').hidden=true">×</button>
       </div>
       <div class="kp-overlay-body" id="kp-body">—</div>
@@ -138,44 +138,44 @@
   <!-- RIGHT PANEL -->
   <div class="panel-right">
     <div class="data-section">
-      <div class="data-label">磁暴状态</div>
-      <div class="data-row"><span class="data-row-label">Kp 指数</span><span class="data-row-val" id="disp-kp">3</span></div>
-      <div class="data-row"><span class="data-row-label">磁暴级别</span><span class="data-row-val" id="disp-storm">宁静</span></div>
-      <div class="data-row"><span class="data-row-label">极光最低纬度</span><span class="data-row-val" id="disp-aurora-lat">~68°</span></div>
-      <div class="data-row"><span class="data-row-label">磁层顶距离</span><span class="data-row-val" id="disp-mp">~10 R⊕</span></div>
+      <div class="data-label">Magnit bo'ron holati</div>
+      <div class="data-row"><span class="data-row-label">Kp indeksi</span><span class="data-row-val" id="disp-kp">3</span></div>
+      <div class="data-row"><span class="data-row-label">Magnit bo'ron darajasi</span><span class="data-row-val" id="disp-storm">Tinch</span></div>
+      <div class="data-row"><span class="data-row-label">Qutb yog'dusi eng past kengligi</span><span class="data-row-val" id="disp-aurora-lat">~68°</span></div>
+      <div class="data-row"><span class="data-row-label">Magnitopauza masofasi</span><span class="data-row-val" id="disp-mp">~10 R⊕</span></div>
     </div>
 
     <div class="data-section">
-      <div class="data-label">磁层结构</div>
+      <div class="data-label">Magnitosfera tuzilishi</div>
       <div class="structure-list">
         <div class="structure-item" style="border-color:#e85d4a;background:rgba(232,93,74,.08);">
-          <div class="structure-name">弓形激波 Bow Shock</div>
-          <div class="structure-desc">太阳风在此突然减速，被地磁场偏转</div>
+          <div class="structure-name">Yoy zarbasi (Bow Shock)</div>
+          <div class="structure-desc">Quyosh shamoli shu yerda keskin sekinlashadi va Yer magnit maydoni tomonidan og'diriladi</div>
         </div>
         <div class="structure-item" style="border-color:#f4a853;background:rgba(244,168,83,.08);">
-          <div class="structure-name">磁层顶 Magnetopause</div>
-          <div class="structure-desc">磁压=太阳风压力处，磁层边界</div>
+          <div class="structure-name">Magnitopauza (Magnetopause)</div>
+          <div class="structure-desc">Magnit bosim = quyosh shamoli bosimi bo'lgan joy, magnitosfera chegarasi</div>
         </div>
         <div class="structure-item" style="border-color:#6db3d9;background:rgba(109,179,217,.08);">
-          <div class="structure-name">范艾伦辐射带</div>
-          <div class="structure-desc">被磁场捕获的高能粒子，内带(1-2R⊕)、外带(3-9R⊕)</div>
+          <div class="structure-name">Van Allen radiatsiya kamari</div>
+          <div class="structure-desc">Magnit maydon tomonidan ushlab qolingan yuqori energiyali zarralar, ichki kamar (1-2R⊕), tashqi kamar (3-9R⊕)</div>
         </div>
         <div class="structure-item" style="border-color:#7dc48a;background:rgba(125,196,138,.08);">
-          <div class="structure-name">极光卵 Auroral Oval</div>
-          <div class="structure-desc">太阳风粒子沿磁力线进入高层大气，激发氧氮发光</div>
+          <div class="structure-name">Qutb yog'dusi zonasi (Auroral Oval)</div>
+          <div class="structure-desc">Quyosh shamoli zarralari magnit chiziqlari bo'ylab yuqori atmosferaga kirib, kislorod va azotni yoritadi</div>
         </div>
         <div class="structure-item" style="border-color:#5a6577;background:rgba(90,101,119,.08);">
-          <div class="structure-name">磁尾 Magnetotail</div>
-          <div class="structure-desc">夜侧被吹成流线形，延伸数百R⊕</div>
+          <div class="structure-name">Magnit dumi (Magnetotail)</div>
+          <div class="structure-desc">Tungi tomonda oqim shakliga cho'zilib, bir necha yuz R⊕ ga uzayadi</div>
         </div>
       </div>
     </div>
 
     <div class="struggle-box">
-      <div class="struggle-label">认知冲突</div>
+      <div class="struggle-label">Kutilmagan holat</div>
       <div class="struggle-text">
-        极光并非"太阳光照到极地"——而是太阳风高能粒子（电子、质子）沿磁力线进入极区大气，撞击 O、N₂ 等分子使其激发发光。<br><br>
-        没有地磁场，太阳风会直接剥蚀地球大气（如火星）。地磁场是生命的保护伞。
+        Qutb yog'dusi "Quyosh nuri qutblarga tushishi" emas — balki quyosh shamolidagi yuqori energiyali zarralar (elektron, proton) magnit chiziqlari bo'ylab qutb hududi atmosferasiga kirib, O, N₂ kabi molekulalarga urilib, ularni yoritadi.<br><br>
+        Yer magnit maydoni bo'lmasa, quyosh shamoli Yer atmosferasini to'g'ridan-to'g'ri yemirib tashlagan bo'lardi (Mars kabi). Yer magnit maydoni hayotning himoya qalqonidir.
       </div>
     </div>
   </div>
@@ -195,11 +195,11 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 
 const KP_DOCS={
-  solar_wind:`<strong>太阳风</strong>：太阳日冕持续向外喷发的等离子体流（主要是质子和电子）。速度约300–800 km/s，静止期约450 km/s。太阳耀斑/CME（日冕物质抛射）期间速度和密度大幅增加，引发磁暴。`,
-  magnetosphere:`<strong>地球磁层</strong>：地球磁场与太阳风的交互区域。日侧被压缩至约10个地球半径（R⊕），夜侧被吹成数百R⊕的磁尾。磁层保护地球生物圈免受太阳风和宇宙射线的直接轰击。`,
-  aurora:`<strong>极光成因</strong>：太阳风粒子沿开放磁力线进入极区（磁极附近），与80–300km高度的大气分子碰撞，使其激发后发光。<br>绿色：原子氧（~100km）；红色：原子氧（>200km）；蓝紫色：氮分子。`,
-  dipole:`<strong>偶极磁场</strong>：地球磁场近似为偶极场，磁轴与地球自转轴偏约11°。磁力线从南磁极出发，弯曲环绕地球，从北磁极进入。磁赤道处场线平行地面，极地处垂直地面。`,
-  kp:`<strong>Kp指数</strong>（行星际磁场指数）：0–9级衡量地磁活动。<br>Kp=0–3：宁静；Kp=4：活跃；Kp≥5：磁暴（G1）；Kp≥7：强磁暴（G3）；Kp=9：极端磁暴（G5）。<br>强磁暴可影响GPS、卫星、电网，但带来中低纬可见极光。`
+  solar_wind:`<strong>Quyosh shamoli</strong>: Quyosh toji tomonidan doimiy ravishda chiqariladigan plazma oqimi (asosan proton va elektronlar). Tezligi taxminan 300–800 km/s, tinch davrda taxminan 450 km/s. Quyosh alangalanishi/CME (toj massasi otilishi) davrida tezlik va zichlik keskin oshib, magnit bo'ronni keltirib chiqaradi.`,
+  magnetosphere:`<strong>Yer magnitosferasi</strong>: Yer magnit maydoni bilan quyosh shamolining o'zaro ta'sir zonasi. Kunduzgi tomonda taxminan 10 ta Yer radiusigacha (R⊕) siqiladi, tungi tomonda esa bir necha yuz R⊕ li magnit dumiga cho'ziladi. Magnitosfera Yer biosferasini quyosh shamoli va kosmik nurlarning to'g'ridan-to'g'ri ta'siridan himoya qiladi.`,
+  aurora:`<strong>Qutb yog'dusining sababi</strong>: quyosh shamoli zarralari ochiq magnit chiziqlari bo'ylab qutb hududiga (magnit qutb yaqiniga) kirib, 80–300 km balandlikdagi atmosfera molekulalari bilan to'qnashib, ularni yoritadi.<br>Yashil: atom kislorod (~100 km); qizil: atom kislorod (>200 km); ko'k-binafsha: azot molekulasi.`,
+  dipole:`<strong>Dipol magnit maydoni</strong>: Yer magnit maydoni taxminan dipol maydonga o'xshaydi, magnit o'qi Yerning aylanish o'qidan taxminan 11° og'gan. Magnit chiziqlari janubiy magnit qutbdan chiqib, Yerni aylanib, shimoliy magnit qutbga kiradi. Magnit ekvatorida maydon chiziqlari yer yuzasiga parallel, qutblarda esa perpendikulyar bo'ladi.`,
+  kp:`<strong>Kp indeksi</strong> (sayyoralararo magnit maydon indeksi): 0–9 daraja bilan geomagnit faollikni o'lchaydi.<br>Kp=0–3: tinch; Kp=4: faol; Kp≥5: magnit bo'ron (G1); Kp≥7: kuchli magnit bo'ron (G3); Kp=9: ekstremal magnit bo'ron (G5).<br>Kuchli magnit bo'ron GPS, sun'iy yo'ldoshlar va elektr tarmoqlariga ta'sir qilishi mumkin, lekin o'rta va past kengliklarda ham qutb yog'dusini ko'rish imkonini beradi.`
 };
 document.getElementById('kp-sel').addEventListener('change',e=>{
   const el=document.getElementById('kp-overlay');
@@ -300,7 +300,7 @@ function buildBowShock(kp){
     new THREE.LineBasicMaterial({color:0xe85d4a,transparent:true,opacity:0.6})));
   const div=document.createElement('div');
   div.style.cssText='font-family:monospace;font-size:10px;color:#e85d4a;background:rgba(7,10,19,.8);padding:2px 5px;border-radius:2px;white-space:nowrap;';
-  div.textContent=`弓形激波 (${standoff.toFixed(1)}R⊕)`;
+  div.textContent=`Yoy zarbasi (${standoff.toFixed(1)}R⊕)`;
   const lbl=new CSS2DObject(div);
   lbl.position.set(standoff*EARTH_R*0.7, standoff*EARTH_R*0.9, 0);
   bowGroup.add(lbl);
@@ -329,7 +329,7 @@ function buildMagnetopause(kp){
     new THREE.LineBasicMaterial({color:0xf4a853,transparent:true,opacity:0.5})));
   const div=document.createElement('div');
   div.style.cssText='font-family:monospace;font-size:10px;color:#f4a853;background:rgba(7,10,19,.8);padding:2px 5px;border-radius:2px;';
-  div.textContent='磁层顶';
+  div.textContent='Magnitopauza';
   const lbl=new CSS2DObject(div);
   lbl.position.set(r_day*0.8, r_day*0.5, 0);
   mpGroup.add(lbl);
@@ -349,7 +349,7 @@ function buildTail(){
   tailGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts2),new THREE.LineBasicMaterial({color:0x334488,transparent:true,opacity:0.5})));
   const div=document.createElement('div');
   div.style.cssText='font-family:monospace;font-size:10px;color:#5a6577;background:rgba(7,10,19,.8);padding:2px 5px;border-radius:2px;';
-  div.textContent='磁尾 (向夜侧延伸)';
+  div.textContent='Magnit dumi (tungi tomonga cho\'zilgan)';
   const lbl=new CSS2DObject(div);
   lbl.position.set(-20*EARTH_R, 9*EARTH_R, 0);
   tailGroup.add(lbl);
@@ -421,7 +421,7 @@ document.getElementById('sl-kp').addEventListener('input',e=>{
 
 function updateReadout(kp){
   document.getElementById('disp-kp').textContent=kp;
-  const levels=['宁静','宁静','宁静','活跃','活跃','G1磁暴','G2磁暴','G3磁暴','G4磁暴','G5极端'];
+  const levels=['Tinch','Tinch','Tinch','Faol','Faol','G1 bo\'ron','G2 bo\'ron','G3 bo\'ron','G4 bo\'ron','G5 ekstremal'];
   document.getElementById('disp-storm').textContent=levels[kp]||'—';
   const auroraLat=(75-kp*3.3).toFixed(1);
   document.getElementById('disp-aurora-lat').textContent='~'+auroraLat+'°';

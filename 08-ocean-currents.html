@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="uz">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>世界洋流 · 3D 交互演示</title>
+<title>Dunyo okean oqimlari · 3D interaktiv namoyish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -61,43 +61,43 @@
 <div id="app">
   <!-- LEFT PANEL -->
   <div class="panel-left">
-    <a class="back-link" href="./index.html">← 返回目录</a>
+    <a class="back-link" href="./index.html">← Mundarijaga qaytish</a>
     <div class="brand-block">
-      <div class="brand-title">世界<em>洋流</em>分布</div>
+      <div class="brand-title">Dunyo <em>okean oqimlari</em> taqsimoti</div>
       <div class="brand-sub">Module 08 · Ocean Currents</div>
     </div>
 
     <div class="section">
-      <div class="section-label">知识点</div>
+      <div class="section-label">Mavzular</div>
       <select class="kp-select" id="kp-sel">
-        <option value="pattern">洋流基本规律——大洋环流</option>
-        <option value="warm">暖流：增温增湿，渔业</option>
-        <option value="cold">寒流：降温减湿，渔场</option>
-        <option value="fishing">世界著名渔场</option>
-        <option value="climate">洋流对气候的影响</option>
-        <option value="thermohaline">热盐环流（深层）</option>
+        <option value="pattern">Okean oqimlarining asosiy qonuniyati — okean girdoblari</option>
+        <option value="warm">Issiq oqimlar: isitadi va namlaydi, baliqchilik</option>
+        <option value="cold">Sovuq oqimlar: soviydi va quritadi, baliqchilik hududlari</option>
+        <option value="fishing">Dunyoning mashhur baliqchilik hududlari</option>
+        <option value="climate">Okean oqimlarining iqlimga ta'siri</option>
+        <option value="thermohaline">Termohalin tsirkulyatsiya (chuqur qatlam)</option>
       </select>
     </div>
 
     <div class="section">
-      <div class="section-label">图层</div>
+      <div class="section-label">Qatlamlar</div>
       <div class="check-grid">
-        <label class="check"><input type="checkbox" id="lyr-warm" checked> 暖流</label>
-        <label class="check"><input type="checkbox" id="lyr-cold" checked> 寒流</label>
-        <label class="check"><input type="checkbox" id="lyr-fishing" checked> 渔场</label>
-        <label class="check"><input type="checkbox" id="lyr-labels" checked> 名称</label>
-        <label class="check"><input type="checkbox" id="lyr-animate" checked> 动画</label>
+        <label class="check"><input type="checkbox" id="lyr-warm" checked> Issiq oqimlar</label>
+        <label class="check"><input type="checkbox" id="lyr-cold" checked> Sovuq oqimlar</label>
+        <label class="check"><input type="checkbox" id="lyr-fishing" checked> Baliqchilik hududlari</label>
+        <label class="check"><input type="checkbox" id="lyr-labels" checked> Nomlar</label>
+        <label class="check"><input type="checkbox" id="lyr-animate" checked> Animatsiya</label>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">规律</div>
+      <div class="section-label">Qonuniyat</div>
       <div style="font-size:12px;color:var(--text-secondary);line-height:1.75;padding:12px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:2px;">
-        北半球大洋：<strong>顺时针</strong>环流<br>
-        南半球大洋：<strong>逆时针</strong>环流<br>
-        大洋东岸（大陆西岸）：<span style="color:#6db3d9">寒流</span><br>
-        大洋西岸（大陆东岸）：<span style="color:#e85d4a">暖流</span><br>
-        南纬40–60°：<strong>西风漂流</strong>（寒流，绕行全球）
+        Shim. yarim shar okeanlari: <strong>soat strelkasi</strong> yo'nalishida girdob<br>
+        Jan. yarim shar okeanlari: <strong>soat strelkasiga teskari</strong> girdob<br>
+        Okean sharqiy qirg'og'i (materik g'arbiy qirg'og'i): <span style="color:#6db3d9">sovuq oqim</span><br>
+        Okean g'arbiy qirg'og'i (materik sharqiy qirg'og'i): <span style="color:#e85d4a">issiq oqim</span><br>
+        40–60°S: <strong>G'arbiy shamollar oqimi</strong> (sovuq oqim, butun dunyoni aylanib chiqadi)
       </div>
     </div>
   </div>
@@ -107,7 +107,7 @@
     <canvas id="three-canvas"></canvas>
     <div class="kp-overlay" id="kp-overlay" hidden>
       <div class="kp-overlay-header">
-        <span class="kp-overlay-title">知识点说明</span>
+        <span class="kp-overlay-title">Mavzu tushuntirishi</span>
         <button class="kp-overlay-close" onclick="document.getElementById('kp-overlay').hidden=true">×</button>
       </div>
       <div class="kp-overlay-body" id="kp-body">—</div>
@@ -117,49 +117,49 @@
   <!-- RIGHT PANEL -->
   <div class="panel-right">
     <div class="data-section">
-      <div class="data-label">图例</div>
+      <div class="data-label">Belgilar</div>
       <div class="legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#e85d4a;"></div>暖流（水温高于流经海区）</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#6db3d9;"></div>寒流（水温低于流经海区）</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#f4a853;box-shadow:0 0 0 2px rgba(244,168,83,.4);"></div>世界著名渔场</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#e85d4a;"></div>Issiq oqim (harorat o'tayotgan dengiz zonasidan yuqori)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#6db3d9;"></div>Sovuq oqim (harorat o'tayotgan dengiz zonasidan past)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f4a853;box-shadow:0 0 0 2px rgba(244,168,83,.4);"></div>Dunyoning mashhur baliqchilik hududi</div>
       </div>
     </div>
 
     <div class="data-section">
-      <div class="data-label">主要洋流</div>
+      <div class="data-label">Asosiy okean oqimlari</div>
       <div class="current-list">
         <div class="current-item current-warm">
-          <div class="current-name">北大西洋暖流</div>
-          <div class="current-desc">墨西哥湾流北上，使西欧气候温和湿润</div>
+          <div class="current-name">Shimoliy Atlantika issiq oqimi</div>
+          <div class="current-desc">Meksika ko'rfazi oqimi shimolga ko'tarilib, G'arbiy Yevropa iqlimini yumshoq va nam qiladi</div>
         </div>
         <div class="current-item current-warm">
-          <div class="current-name">日本暖流（黑潮）</div>
-          <div class="current-desc">北太平洋西岸，与亲潮交汇→北海道渔场</div>
+          <div class="current-name">Yaponiya issiq oqimi (Kurosio)</div>
+          <div class="current-desc">Shimoliy Tinch okeani g'arbiy qirg'og'i, Oyasio bilan uchrashadi → Xokkaydo baliqchilik hududi</div>
         </div>
         <div class="current-item current-cold">
-          <div class="current-name">秘鲁寒流</div>
-          <div class="current-desc">南美西岸上升流，形成秘鲁渔场（世界最大）</div>
+          <div class="current-name">Peru sovuq oqimi</div>
+          <div class="current-desc">Janubiy Amerika g'arbiy qirg'og'idagi ko'tarilma oqim, dunyodagi eng katta Peru baliqchilik hududini hosil qiladi</div>
         </div>
         <div class="current-item current-cold">
-          <div class="current-name">千岛寒流（亲潮）</div>
-          <div class="current-desc">与黑潮交汇，带来丰富营养盐</div>
+          <div class="current-name">Kuril sovuq oqimi (Oyasio)</div>
+          <div class="current-desc">Kurosio bilan uchrashib, ko'plab ozuqa moddalarini olib keladi</div>
         </div>
         <div class="current-item current-cold">
-          <div class="current-name">加那利寒流</div>
-          <div class="current-desc">北大西洋东岸，使撒哈拉沿岸干燥</div>
+          <div class="current-name">Kanar sovuq oqimi</div>
+          <div class="current-desc">Shimoliy Atlantika sharqiy qirg'og'i, Saxroi Kabir sohilini quritadi</div>
         </div>
         <div class="current-item current-cold">
-          <div class="current-name">西风漂流</div>
-          <div class="current-desc">南纬40–60°绕行全球，世界最强大洋流</div>
+          <div class="current-name">G'arbiy shamollar oqimi</div>
+          <div class="current-desc">40–60°S kengliklarida butun dunyoni aylanib chiqadi, dunyodagi eng kuchli okean oqimi</div>
         </div>
       </div>
     </div>
 
     <div class="struggle-box">
-      <div class="struggle-label">认知冲突</div>
+      <div class="struggle-label">Kutilmagan holat</div>
       <div class="struggle-text">
-        "寒流流过的地方气候寒冷"——<strong>错误！</strong>寒流使气温低于同纬度平均，且减少降水，形成沙漠（如纳米布、阿塔卡马），而非极寒气候。<br><br>
-        寒暖流交汇处（渔场）：下层冷水上涌带来营养盐，吸引鱼类。
+        "Sovuq oqim o'tgan joyning iqlimi sovuq bo'ladi" — <strong>noto'g'ri!</strong> Sovuq oqim haroratni bir xil kenglikdagi o'rtachadan pastroq qiladi va yog'ingarchilikni kamaytirib, cho'l hosil qiladi (masalan, Namib, Atakama), lekin haddan tashqari sovuq iqlim emas.<br><br>
+        Sovuq va issiq oqimlar uchrashadigan joylarda (baliqchilik hududlari): pastki qatlamdagi sovuq suv ko'tarilib, ozuqa moddalarini olib keladi va baliqlarni jalb qiladi.
       </div>
     </div>
   </div>
@@ -180,12 +180,12 @@ import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer
 
 // ── KP docs ───────────────────────────────────────────────────────────────────
 const KP_DOCS = {
-  pattern:`<strong>大洋环流规律</strong>：以副热带为中心。北半球顺时针，南半球逆时针。低纬度信风→赤道洋流（向西）；中纬度西风→西风漂流（向东）；大洋西岸受科氏力影响洋流强而窄（暖流）；东岸宽而弱（寒流）。`,
-  warm:`<strong>暖流</strong>：水温高于流经海区。沿大陆东岸（大洋西岸）向高纬度流动。增温增湿：使沿岸气候温暖湿润。代表：湾流、黑潮、东澳大利亚暖流。`,
-  cold:`<strong>寒流</strong>：水温低于流经海区。沿大陆西岸（大洋东岸）向低纬度流动。降温减湿：使沿岸气候凉爽干燥。沿岸常有上升流带来营养盐，形成大渔场。`,
-  fishing:`<strong>世界著名渔场</strong>：①北海道渔场（黑潮+亲潮）②纽芬兰渔场（湾流+拉布拉多寒流）③北海渔场（北大西洋暖流）④秘鲁渔场（秘鲁寒流上升流，世界最大）。成因：寒暖交汇或上升流带来营养盐→浮游生物→鱼类。`,
-  climate:`<strong>洋流对气候</strong>：①北大西洋暖流→西欧温带海洋性气候（同纬度最温暖）②秘鲁寒流→智利沙漠（南美太平洋沿岸）③加那利寒流→撒哈拉沿岸更干④本格拉寒流→纳米布沙漠。`,
-  thermohaline:`<strong>热盐环流</strong>（大洋传送带）：表层暖流在高纬度冷却下沉（北大西洋深水形成区）→深层冷水绕行全球→上涌→表层暖流返回。周期约1000年。是全球气候调节系统的关键。`
+  pattern:`<strong>Okean girdoblari qonuniyati</strong>: subtropik zona markazida joylashadi. Shimoliy yarim sharda soat strelkasi yo'nalishida, Janubiy yarim sharda teskari yo'nalishda. Past kenglik passatlari → ekvatorial oqim (g'arbga); o'rta kenglik g'arbiy shamollari → g'arbiy shamollar oqimi (sharqqa); okean g'arbiy qirg'og'ida Koriolis kuchi ta'sirida oqim kuchli va tor (issiq oqim); sharqiy qirg'oqda keng va zaif (sovuq oqim).`,
+  warm:`<strong>Issiq oqim</strong>: harorati o'tayotgan dengiz zonasidan yuqori. Materik sharqiy qirg'og'i (okean g'arbiy qirg'og'i) bo'ylab yuqori kenglikka qarab oqadi. Isitadi va namlaydi: sohil iqlimini issiq va nam qiladi. Namunalari: Golfstrim, Kurosio, Sharqiy Avstraliya issiq oqimi.`,
+  cold:`<strong>Sovuq oqim</strong>: harorati o'tayotgan dengiz zonasidan past. Materik g'arbiy qirg'og'i (okean sharqiy qirg'og'i) bo'ylab past kenglikka qarab oqadi. Soviydi va quritadi: sohil iqlimini salqin va quruq qiladi. Sohilda ko'pincha ko'tarilma oqimlar ozuqa moddalarini olib kelib, katta baliqchilik hududlarini hosil qiladi.`,
+  fishing:`<strong>Dunyoning mashhur baliqchilik hududlari</strong>: ① Xokkaydo baliqchilik hududi (Kurosio+Oyasio) ② Nyufaundlend baliqchilik hududi (Golfstrim+Labrador sovuq oqimi) ③ Shimoliy dengiz baliqchilik hududi (Shim. Atlantika issiq oqimi) ④ Peru baliqchilik hududi (Peru sovuq oqimi ko'tarilmasi, dunyodagi eng katta). Sababi: sovuq va issiq oqimlar uchrashuvi yoki ko'tarilma oqimlar ozuqa moddalarini olib keladi → plankton → baliqlar.`,
+  climate:`<strong>Okean oqimlarining iqlimga ta'siri</strong>: ① Shim. Atlantika issiq oqimi → G'arbiy Yevropa mo''tadil dengiz iqlimi (bir xil kenglikda eng issiq) ② Peru sovuq oqimi → Chili cho'li (Janubiy Amerika Tinch okeani sohili) ③ Kanar sovuq oqimi → Saxroi Kabir sohilini yanada quritadi ④ Bengela sovuq oqimi → Namib cho'li.`,
+  thermohaline:`<strong>Termohalin tsirkulyatsiya</strong> (okean konveyeri): yuza issiq oqim yuqori kengliklarda soviydi va cho'kadi (Shim. Atlantika chuqur suv hosil bo'lish zonasi) → chuqur sovuq suv butun dunyoni aylanib chiqadi → ko'tariladi → yuza issiq oqim qaytadi. Davri taxminan 1000 yil. Global iqlim tartibga solish tizimining asosiy elementi.`
 };
 document.getElementById('kp-sel').addEventListener('change', e=>{
   const el = document.getElementById('kp-overlay');
@@ -238,41 +238,41 @@ function ll2xyz(lon, lat, r){
 // Each current: {name, type:'warm'|'cold', points:[[lon,lat],...], label:[lon,lat]}
 const CURRENTS = [
   // === NORTH PACIFIC ===
-  {name:'北赤道暖流', type:'warm', pts:[[-160,15],[-140,14],[-120,13],[-110,12],[-100,10],[140,10],[160,12],[180,13],[-160,15]]},
-  {name:'黑潮（日本暖流）', type:'warm', pts:[[125,20],[130,28],[135,35],[140,42],[145,48]]},
-  {name:'北太平洋暖流', type:'warm', pts:[[145,48],[160,48],[180,48],[-160,48],[-140,46],[-130,44],[-125,42]]},
-  {name:'加利福尼亚寒流', type:'cold', pts:[[-125,42],[-120,38],[-118,30],[-115,22],[-110,15]]},
-  {name:'千岛寒流（亲潮）', type:'cold', pts:[[155,55],[150,50],[145,45],[140,38],[135,33]]},
+  {name:'Shim. ekvatorial issiq oqim', type:'warm', pts:[[-160,15],[-140,14],[-120,13],[-110,12],[-100,10],[140,10],[160,12],[180,13],[-160,15]]},
+  {name:'Kurosio (Yaponiya issiq oqimi)', type:'warm', pts:[[125,20],[130,28],[135,35],[140,42],[145,48]]},
+  {name:'Shim. Tinch okeani issiq oqimi', type:'warm', pts:[[145,48],[160,48],[180,48],[-160,48],[-140,46],[-130,44],[-125,42]]},
+  {name:'Kaliforniya sovuq oqimi', type:'cold', pts:[[-125,42],[-120,38],[-118,30],[-115,22],[-110,15]]},
+  {name:'Kuril sovuq oqimi (Oyasio)', type:'cold', pts:[[155,55],[150,50],[145,45],[140,38],[135,33]]},
 
   // === NORTH ATLANTIC ===
-  {name:'北赤道暖流(大)', type:'warm', pts:[[-20,12],[-30,12],[-45,13],[-60,15],[-65,18],[-70,22],[-75,26]]},
-  {name:'墨西哥湾流/北大西洋暖流', type:'warm', pts:[[-75,26],[-72,32],[-65,40],[-55,45],[-40,50],[-20,52],[-5,54],[0,55],[5,57],[10,60]]},
-  {name:'加那利寒流', type:'cold', pts:[[0,55],[-5,50],[-10,40],[-15,30],[-18,22],[-20,14]]},
-  {name:'拉布拉多寒流', type:'cold', pts:[[-55,60],[-58,55],[-60,50],[-65,45],[-70,40],[-72,35]]},
+  {name:'Shim. ekvatorial issiq oqim(Atl.)', type:'warm', pts:[[-20,12],[-30,12],[-45,13],[-60,15],[-65,18],[-70,22],[-75,26]]},
+  {name:'Golfstrim/Shim. Atlantika issiq oqimi', type:'warm', pts:[[-75,26],[-72,32],[-65,40],[-55,45],[-40,50],[-20,52],[-5,54],[0,55],[5,57],[10,60]]},
+  {name:'Kanar sovuq oqimi', type:'cold', pts:[[0,55],[-5,50],[-10,40],[-15,30],[-18,22],[-20,14]]},
+  {name:'Labrador sovuq oqimi', type:'cold', pts:[[-55,60],[-58,55],[-60,50],[-65,45],[-70,40],[-72,35]]},
 
   // === SOUTH PACIFIC ===
-  {name:'南赤道暖流(太)', type:'warm', pts:[[180,5],[160,5],[140,5],[120,5],[100,5],[80,5],[-100,5],[-80,5],[-70,5]]},
-  {name:'秘鲁寒流', type:'cold', pts:[[-70,5],[-75,12],[-78,20],[-72,35],[-70,42]]},
-  {name:'东澳大利亚暖流', type:'warm', pts:[[155,15],[155,25],[154,35],[152,42],[148,48]]},
-  {name:'西风漂流(南)', type:'cold', pts:[[148,48],[160,50],[180,52],[-160,52],[-140,52],[-120,52],[-100,52],[-80,52],[-60,52],[-40,52],[-20,52],[0,52],[20,52],[40,52],[60,52],[80,52],[100,52],[120,52],[140,52],[148,48]]},
+  {name:'Jan. ekvatorial issiq oqim(Tinch)', type:'warm', pts:[[180,5],[160,5],[140,5],[120,5],[100,5],[80,5],[-100,5],[-80,5],[-70,5]]},
+  {name:'Peru sovuq oqimi', type:'cold', pts:[[-70,5],[-75,12],[-78,20],[-72,35],[-70,42]]},
+  {name:'Sharqiy Avstraliya issiq oqimi', type:'warm', pts:[[155,15],[155,25],[154,35],[152,42],[148,48]]},
+  {name:'G\'arbiy shamollar oqimi(Jan.)', type:'cold', pts:[[148,48],[160,50],[180,52],[-160,52],[-140,52],[-120,52],[-100,52],[-80,52],[-60,52],[-40,52],[-20,52],[0,52],[20,52],[40,52],[60,52],[80,52],[100,52],[120,52],[140,52],[148,48]]},
 
   // === SOUTH ATLANTIC ===
-  {name:'南赤道暖流(大)', type:'warm', pts:[[-10,5],[-20,5],[-30,5],[-40,5],[-50,5],[0,5],[20,3]]},
-  {name:'巴西暖流', type:'warm', pts:[[-40,5],[-45,15],[-50,25],[-52,35],[-55,45]]},
-  {name:'本格拉寒流', type:'cold', pts:[[15,-35],[14,-25],[13,-15],[12,-5],[10,5]]},
-  {name:'加那利寒流(南)', type:'cold', pts:[[20,5],[15,-5],[13,-15],[14,-25],[15,-35]]},
+  {name:'Jan. ekvatorial issiq oqim(Atl.)', type:'warm', pts:[[-10,5],[-20,5],[-30,5],[-40,5],[-50,5],[0,5],[20,3]]},
+  {name:'Braziliya issiq oqimi', type:'warm', pts:[[-40,5],[-45,15],[-50,25],[-52,35],[-55,45]]},
+  {name:'Bengela sovuq oqimi', type:'cold', pts:[[15,-35],[14,-25],[13,-15],[12,-5],[10,5]]},
+  {name:'Kanar sovuq oqimi(Jan.)', type:'cold', pts:[[20,5],[15,-5],[13,-15],[14,-25],[15,-35]]},
 
   // === INDIAN OCEAN ===
-  {name:'南赤道暖流(印)', type:'warm', pts:[[100,-10],[80,-10],[60,-10],[50,-8],[45,-5],[40,-2]]},
-  {name:'莫桑比克暖流', type:'warm', pts:[[40,-2],[38,-10],[36,-20],[34,-30],[30,-40]]},
-  {name:'西澳大利亚寒流', type:'cold', pts:[[110,-35],[108,-25],[106,-15],[105,-5],[100,0]]},
+  {name:'Jan. ekvatorial issiq oqim(Hind)', type:'warm', pts:[[100,-10],[80,-10],[60,-10],[50,-8],[45,-5],[40,-2]]},
+  {name:'Mozambik issiq oqimi', type:'warm', pts:[[40,-2],[38,-10],[36,-20],[34,-30],[30,-40]]},
+  {name:'G\'arbiy Avstraliya sovuq oqimi', type:'cold', pts:[[110,-35],[108,-25],[106,-15],[105,-5],[100,0]]},
 ];
 
 const FISHING_GROUNDS = [
-  {name:'北海道渔场', lon:145, lat:44},
-  {name:'秘鲁渔场', lon:-80, lat:-15},
-  {name:'纽芬兰渔场', lon:-52, lat:46},
-  {name:'北海渔场', lon:3, lat:56},
+  {name:'Xokkaydo baliqchilik hududi', lon:145, lat:44},
+  {name:'Peru baliqchilik hududi', lon:-80, lat:-15},
+  {name:'Nyufaundlend baliqchilik hududi', lon:-52, lat:46},
+  {name:'Shimoliy dengiz baliqchilik hududi', lon:3, lat:56},
 ];
 
 // Groups
@@ -343,14 +343,14 @@ FISHING_GROUNDS.forEach(fg=>{
 });
 
 // Current name labels (sparse)
-const labeledCurrents = ['黑潮（日本暖流）','墨西哥湾流/北大西洋暖流','秘鲁寒流','西风漂流(南)','千岛寒流（亲潮）'];
+const labeledCurrents = ['Kurosio (Yaponiya issiq oqimi)','Golfstrim/Shim. Atlantika issiq oqimi','Peru sovuq oqimi','G\'arbiy shamollar oqimi(Jan.)','Kuril sovuq oqimi (Oyasio)'];
 CURRENTS.filter(c=>labeledCurrents.includes(c.name)).forEach(cur=>{
   const mid = cur.pts[Math.floor(cur.pts.length/2)];
   const pos = ll2xyz(mid[0], mid[1], CURVE_R+0.05);
   const div = document.createElement('div');
   const col = cur.type==='warm'?'#e85d4a':'#6db3d9';
   div.style.cssText=`font-family:monospace;font-size:10px;color:${col};white-space:nowrap;background:rgba(7,10,19,.75);padding:2px 5px;border-radius:2px;`;
-  div.textContent=cur.name.replace('(南)','').replace('(大)','').replace('(太)','').replace('(印)','');
+  div.textContent=cur.name.replace('(Jan.)','').replace('(Atl.)','').replace('(Tinch)','').replace('(Hind)','');
   const lbl = new CSS2DObject(div);
   lbl.position.copy(pos);
   labelGroup.add(lbl);

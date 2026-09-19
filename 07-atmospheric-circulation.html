@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="uz">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>气压带与风带 · 3D 交互演示</title>
+<title>Bosim kamarlari va shamol mintaqalari · 3D interaktiv namoyish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -71,61 +71,61 @@
 <div id="app">
   <!-- LEFT PANEL -->
   <div class="panel-left">
-    <a class="back-link" href="./index.html">← 返回目录</a>
+    <a class="back-link" href="./index.html">← Mundarijaga qaytish</a>
     <div class="brand-block">
-      <div class="brand-title">气压带与<em>风带</em></div>
+      <div class="brand-title">Bosim kamarlari va <em>shamol mintaqalari</em></div>
       <div class="brand-sub">Module 07 · Atmospheric Circulation</div>
     </div>
 
     <div class="section">
-      <div class="section-label">知识点</div>
+      <div class="section-label">Mavzular</div>
       <select class="kp-select" id="kp-sel">
-        <option value="belts">七个气压带、六个风带</option>
-        <option value="coriolis">科里奥利力与风向偏转</option>
-        <option value="shift">气压带风带的季节移动</option>
-        <option value="monsoon">季风的形成——海陆热力差异</option>
-        <option value="climate">气压带风带与气候类型</option>
+        <option value="belts">Yettita bosim kamari, oltita shamol mintaqasi</option>
+        <option value="coriolis">Koriolis kuchi va shamol yo'nalishining og'ishi</option>
+        <option value="shift">Bosim kamarlari va shamol mintaqalarining fasliy siljishi</option>
+        <option value="monsoon">Musson shamollarining hosil bo'lishi — quruqlik va dengiz issiqlik farqi</option>
+        <option value="climate">Bosim kamarlari, shamol mintaqalari va iqlim turlari</option>
       </select>
     </div>
 
     <div class="section">
-      <div class="section-label">季节偏移</div>
+      <div class="section-label">Fasliy siljish</div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label">日期（第几天）</span>
+          <span class="slider-label">Sana (yilning necha kuni)</span>
           <span class="slider-value" id="doy-val">172</span>
         </div>
         <input type="range" id="doy" min="1" max="365" value="172" step="1">
       </div>
       <div style="font-size:11px;color:var(--text-dim);margin-top:-6px;margin-bottom:10px;">
-        ↑ 气压带随太阳直射点季节性南北移动 5–7°
+        ↑ Bosim kamarlari Quyosh tik tushish nuqtasi bilan birga fasliy ravishda 5–7° shimol-janub yo'nalishida siljiydi
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
-        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="setDoy(172)">夏至 6/21</button>
-        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="setDoy(355)">冬至 12/22</button>
-        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="setDoy(80)">春分 3/21</button>
-        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="setDoy(264)">秋分 9/23</button>
+        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="setDoy(172)">Yozgi kunt. 6/21</button>
+        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="setDoy(355)">Qishki kunt. 12/22</button>
+        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="setDoy(80)">Bahorgi tengk. 3/21</button>
+        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="setDoy(264)">Kuzgi tengk. 9/23</button>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">图层</div>
+      <div class="section-label">Qatlamlar</div>
       <div class="check-grid">
-        <label class="check"><input type="checkbox" id="lyr-belts" checked> 气压带</label>
-        <label class="check"><input type="checkbox" id="lyr-winds" checked> 风带箭头</label>
-        <label class="check"><input type="checkbox" id="lyr-coriolis" checked> 科氏偏转</label>
-        <label class="check"><input type="checkbox" id="lyr-labels" checked> 名称标注</label>
+        <label class="check"><input type="checkbox" id="lyr-belts" checked> Bosim kamarlari</label>
+        <label class="check"><input type="checkbox" id="lyr-winds" checked> Shamol o'qlari</label>
+        <label class="check"><input type="checkbox" id="lyr-coriolis" checked> Koriolis og'ishi</label>
+        <label class="check"><input type="checkbox" id="lyr-labels" checked> Nom yorliqlari</label>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">气压带标准纬度（理想）</div>
+      <div class="section-label">Bosim kamarlarining standart kengligi (ideal)</div>
       <div class="formula-box">
-        <div class="formula-text">赤道低压带：0°</div>
-        <div class="formula-text">副热带高压带：±30°</div>
-        <div class="formula-text">副极地低压带：±60°</div>
-        <div class="formula-text">极地高压带：±90°</div>
-        <div class="formula-sub">实际季节偏移：±5~7°（随δ移动）</div>
+        <div class="formula-text">Ekvatorial past bosim: 0°</div>
+        <div class="formula-text">Subtropik yuqori bosim: ±30°</div>
+        <div class="formula-text">Subpolyar past bosim: ±60°</div>
+        <div class="formula-text">Qutb yuqori bosimi: ±90°</div>
+        <div class="formula-sub">Haqiqiy fasliy siljish: ±5~7° (δ bilan birga)</div>
       </div>
     </div>
   </div>
@@ -135,7 +135,7 @@
     <canvas id="three-canvas"></canvas>
     <div class="kp-overlay" id="kp-overlay" hidden>
       <div class="kp-overlay-header">
-        <span class="kp-overlay-title">知识点说明</span>
+        <span class="kp-overlay-title">Mavzu tushuntirishi</span>
         <button class="kp-overlay-close" onclick="document.getElementById('kp-overlay').hidden=true">×</button>
       </div>
       <div class="kp-overlay-body" id="kp-body">—</div>
@@ -145,21 +145,21 @@
   <!-- RIGHT PANEL -->
   <div class="panel-right">
     <div class="data-section">
-      <div class="data-label">当前参数</div>
-      <div class="data-row"><span class="data-row-label">太阳赤纬 δ</span><span class="data-row-val" id="decl-val">—</span></div>
-      <div class="data-row"><span class="data-row-label">气压带偏移</span><span class="data-row-val" id="shift-val">—</span></div>
+      <div class="data-label">Joriy parametrlar</div>
+      <div class="data-row"><span class="data-row-label">Quyosh deklinatsiyasi δ</span><span class="data-row-val" id="decl-val">—</span></div>
+      <div class="data-row"><span class="data-row-label">Bosim kamari siljishi</span><span class="data-row-val" id="shift-val">—</span></div>
     </div>
 
     <div class="data-section">
-      <div class="data-label">气压带与风带（当前位置）</div>
+      <div class="data-label">Bosim kamarlari va shamol mintaqalari (joriy holat)</div>
       <div class="belt-list" id="belt-list"></div>
     </div>
 
     <div class="struggle-box">
-      <div class="struggle-label">认知冲突</div>
+      <div class="struggle-label">Kutilmagan holat</div>
       <div class="struggle-text">
-        北半球信风为<strong>东北信风</strong>，而非正东风——科里奥利力使北半球气流向右偏，南半球向左偏。<br><br>
-        把日期拖到夏至：副热带高压带北移至约 35°，地中海进入其控制，形成夏干气候。
+        Shimoliy yarim shar passatlari <strong>shimoli-sharqiy passat</strong> bo'lib, aynan sharqiy shamol emas — Koriolis kuchi Shimoliy yarim sharda havo oqimini o'ngga, Janubiy yarim sharda chapga og'diradi.<br><br>
+        Sanani yozgi kunturishga torting: subtropik yuqori bosim shimolga taxminan 35° gacha siljiydi, O'rta yer dengizi uning ta'siriga kiradi va yozgi quruq iqlim shakllanadi.
       </div>
     </div>
   </div>
@@ -180,11 +180,11 @@ import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer
 
 // ── KP docs ───────────────────────────────────────────────────────────────────
 const KP_DOCS = {
-  belts:`<strong>七个气压带、六个风带</strong><br>气压带（从赤道向极地）：赤道低压带(0°)、副热带高压带(±30°)、副极地低压带(±60°)、极地高压带(±90°)。<br>风带：信风带(0°-30°)、西风带(30°-60°)、极地东风带(60°-90°)。气压带和风带相间分布。`,
-  coriolis:`<strong>科里奥利力</strong>（地转偏向力）：北半球气流向右偏，南半球向左偏。<br>→ 北半球信风：东北风；南半球信风：东南风<br>→ 北半球西风带：西南风；南半球西风带：西北风<br>→ 北半球极地东风：东北风；南半球：东南风`,
-  shift:`<strong>季节移动</strong>：气压带风带随太阳直射点移动而整体南北偏移约 5~7°。<br>夏至：北移；冬至：南移。<br>影响：地中海气候、热带草原气候的干湿季节交替正是由此形成。`,
-  monsoon:`<strong>季风成因</strong>：海陆热力性质差异叠加气压带风带移动。<br>东亚夏季风：东南风（来自太平洋）；冬季风：西北风（来自西伯利亚）。<br>南亚夏季风：西南风（赤道低压带北移，越赤道气流偏转）。`,
-  climate:`<strong>气压带风带与气候</strong>：<br>热带雨林气候：赤道低压带控制，全年高温多雨<br>热带沙漠气候：副热带高压带控制，全年干热<br>地中海气候：夏受副热带高压，冬受西风带，夏干冬湿<br>温带海洋性气候：全年受西风带控制，温凉湿润`
+  belts:`<strong>Yettita bosim kamari, oltita shamol mintaqasi</strong><br>Bosim kamarlari (ekvatordan qutblarga tomon): ekvatorial past bosim (0°), subtropik yuqori bosim (±30°), subpolyar past bosim (±60°), qutb yuqori bosimi (±90°).<br>Shamol mintaqalari: passat mintaqasi (0°-30°), g'arbiy shamollar (30°-60°), qutb sharqiy shamollari (60°-90°). Bosim kamarlari va shamol mintaqalari navbat bilan joylashadi.`,
+  coriolis:`<strong>Koriolis kuchi</strong> (Yerning og'ish kuchi): Shimoliy yarim sharda havo oqimi o'ngga, Janubiy yarim sharda chapga og'adi.<br>→ Shim. yarim shar passati: shimoli-sharqiy shamol; Jan. yarim shar passati: janubi-sharqiy shamol<br>→ Shim. yarim shar g'arbiy shamollari: janubi-g'arbiy shamol; Jan. yarim shar: shimoli-g'arbiy shamol<br>→ Shim. yarim shar qutb sharqiy shamoli: shimoli-sharqiy shamol; Jan. yarim shar: janubi-sharqiy shamol`,
+  shift:`<strong>Fasliy siljish</strong>: bosim kamarlari va shamol mintaqalari Quyosh tik tushish nuqtasi bilan birga umumiy 5~7° shimol-janub yo'nalishida siljiydi.<br>Yozgi kunturish: shimolga; qishki kunturish: janubga.<br>Ta'siri: O'rta yer dengizi iqlimi va savanna iqlimidagi quruq-nam fasllarning almashinishi aynan shu sabab bilan hosil bo'ladi.`,
+  monsoon:`<strong>Musson shamollarining sababi</strong>: quruqlik va dengizning issiqlik xususiyati farqi bosim kamarlari va shamol mintaqalarining siljishi bilan qo'shilib ta'sir qiladi.<br>Sharqiy Osiyo yozgi mussoni: janubi-sharqiy shamol (Tinch okeanidan); qishki musson: shimoli-g'arbiy shamol (Sibirdan).<br>Janubiy Osiyo yozgi mussoni: janubi-g'arbiy shamol (ekvatorial past bosim shimolga siljiydi, ekvatordan o'tuvchi havo oqimi og'adi).`,
+  climate:`<strong>Bosim kamarlari, shamol mintaqalari va iqlim</strong>:<br>Tropik yomg'irli o'rmon iqlimi: ekvatorial past bosim ta'sirida, yil bo'yi issiq va yomg'irli<br>Tropik cho'l iqlimi: subtropik yuqori bosim ta'sirida, yil bo'yi quruq va issiq<br>O'rta yer dengizi iqlimi: yozda subtropik yuqori bosim, qishda g'arbiy shamollar ta'sirida, yozi quruq, qishi nam<br>Mo''tadil dengiz iqlimi: yil bo'yi g'arbiy shamollar ta'sirida, salqin va nam`
 };
 document.getElementById('kp-sel').addEventListener('change', e=>{
   const el = document.getElementById('kp-overlay');
@@ -200,19 +200,19 @@ function declination(doy){ return 23.44*Math.sin(DEG*(doy+284)*360/365.25); }
 // wind dir: angle FROM north (clockwise), that wind blows TOWARD (for arrow direction)
 // We draw wind arrows tangential to latitude circles
 const BELTS = [
-  {name:'赤道低压带', type:'L', lat:0, wind:'无风带（辐合）', windDir:null},
-  {name:'北半球信风带 (东北)', type:'wind', lat:15, hemi:1, wind:'东北信风', windAz:-45},
-  {name:'南半球信风带 (东南)', type:'wind', lat:-15, hemi:-1, wind:'东南信风', windAz:45},
-  {name:'北半球副热带高压带', type:'H', lat:30, hemi:1, wind:'副热带高压', windDir:null},
-  {name:'南半球副热带高压带', type:'H', lat:-30, hemi:-1, wind:'副热带高压', windDir:null},
-  {name:'北半球西风带', type:'wind', lat:45, hemi:1, wind:'西南风', windAz:-135},
-  {name:'南半球西风带', type:'wind', lat:-45, hemi:-1, wind:'西北风', windAz:135},
-  {name:'北半球副极地低压带', type:'L', lat:60, hemi:1, wind:'副极地低压', windDir:null},
-  {name:'南半球副极地低压带', type:'L', lat:-60, hemi:-1, wind:'副极地低压', windDir:null},
-  {name:'北半球极地东风带', type:'wind', lat:75, hemi:1, wind:'东北风', windAz:-45},
-  {name:'南半球极地东风带', type:'wind', lat:-75, hemi:-1, wind:'东南风', windAz:45},
-  {name:'北极高压带', type:'H', lat:90, hemi:1, wind:'极地高压', windDir:null},
-  {name:'南极高压带', type:'H', lat:-90, hemi:-1, wind:'极地高压', windDir:null},
+  {name:'Ekvatorial past bosim', type:'L', lat:0, wind:'Shamolsiz zona (konvergensiya)', windDir:null},
+  {name:'Shim. yarim shar passati (shim.-sharq)', type:'wind', lat:15, hemi:1, wind:'Shimoli-sharqiy passat', windAz:-45},
+  {name:'Jan. yarim shar passati (jan.-sharq)', type:'wind', lat:-15, hemi:-1, wind:'Janubi-sharqiy passat', windAz:45},
+  {name:'Shim. yarim shar subtropik yuqori bosimi', type:'H', lat:30, hemi:1, wind:'Subtropik yuqori bosim', windDir:null},
+  {name:'Jan. yarim shar subtropik yuqori bosimi', type:'H', lat:-30, hemi:-1, wind:'Subtropik yuqori bosim', windDir:null},
+  {name:'Shim. yarim shar g\'arbiy shamollari', type:'wind', lat:45, hemi:1, wind:'Janubi-g\'arbiy shamol', windAz:-135},
+  {name:'Jan. yarim shar g\'arbiy shamollari', type:'wind', lat:-45, hemi:-1, wind:'Shimoli-g\'arbiy shamol', windAz:135},
+  {name:'Shim. yarim shar subpolyar past bosimi', type:'L', lat:60, hemi:1, wind:'Subpolyar past bosim', windDir:null},
+  {name:'Jan. yarim shar subpolyar past bosimi', type:'L', lat:-60, hemi:-1, wind:'Subpolyar past bosim', windDir:null},
+  {name:'Shim. yarim shar qutb sharqiy shamoli', type:'wind', lat:75, hemi:1, wind:'Shimoli-sharqiy shamol', windAz:-45},
+  {name:'Jan. yarim shar qutb sharqiy shamoli', type:'wind', lat:-75, hemi:-1, wind:'Janubi-sharqiy shamol', windAz:45},
+  {name:'Shim. qutb yuqori bosimi', type:'H', lat:90, hemi:1, wind:'Qutb yuqori bosimi', windDir:null},
+  {name:'Jan. qutb yuqori bosimi', type:'H', lat:-90, hemi:-1, wind:'Qutb yuqori bosimi', windDir:null},
 ];
 
 // Belt coloring groups for render
@@ -388,11 +388,11 @@ function update(){
   labelsGroup.clear();
   if(showLabels){
     const labelDefs = [
-      {name:'赤道低压带', lat:0+shift, col:'#6db3d9'},
-      {name:'北副热带高压', lat:30+shift, col:'#e85d4a'},
-      {name:'南副热带高压', lat:-30-shift, col:'#e85d4a'},
-      {name:'北副极地低压', lat:60+shift, col:'#6db3d9'},
-      {name:'南副极地低压', lat:-60-shift, col:'#6db3d9'},
+      {name:'Ekvatorial past bosim', lat:0+shift, col:'#6db3d9'},
+      {name:'Shim. subtropik yuqori bosim', lat:30+shift, col:'#e85d4a'},
+      {name:'Jan. subtropik yuqori bosim', lat:-30-shift, col:'#e85d4a'},
+      {name:'Shim. subpolyar past bosim', lat:60+shift, col:'#6db3d9'},
+      {name:'Jan. subpolyar past bosim', lat:-60-shift, col:'#6db3d9'},
     ];
     labelDefs.forEach(l=>{
       if(Math.abs(l.lat)>88) return;
@@ -409,15 +409,15 @@ function update(){
   // Belt list in right panel
   const beltListEl = document.getElementById('belt-list');
   const bands = [
-    {name:'赤道低压带',lat:0+shift,type:'L',wind:'辐合上升，多降水'},
-    {name:'北副热带高压带',lat:30+shift,type:'H',wind:'下沉，干旱'},
-    {name:'南副热带高压带',lat:-(30+shift),type:'H',wind:'下沉，干旱'},
-    {name:'北副极地低压带',lat:60+shift,type:'L',wind:'暖冷气团交汇，多降水'},
-    {name:'南副极地低压带',lat:-(60+shift),type:'L',wind:'暖冷气团交汇'},
+    {name:'Ekvatorial past bosim',lat:0+shift,type:'L',wind:'Konvergensiya va ko\'tarilish, ko\'p yog\'ingarchilik'},
+    {name:'Shim. subtropik yuqori bosim',lat:30+shift,type:'H',wind:'Cho\'kish, quruqlik'},
+    {name:'Jan. subtropik yuqori bosim',lat:-(30+shift),type:'H',wind:'Cho\'kish, quruqlik'},
+    {name:'Shim. subpolyar past bosim',lat:60+shift,type:'L',wind:'Issiq va sovuq havo massalari uchrashuvi, ko\'p yog\'ingarchilik'},
+    {name:'Jan. subpolyar past bosim',lat:-(60+shift),type:'L',wind:'Issiq va sovuq havo massalari uchrashuvi'},
   ];
   beltListEl.innerHTML = bands.map(b=>`
     <div class="belt-item belt-${b.type}">
-      <div class="belt-label">${b.type==='H'?'高压带':'低压带'} · ${b.lat.toFixed(1)}°</div>
+      <div class="belt-label">${b.type==='H'?'Yuqori bosim':'Past bosim'} · ${b.lat.toFixed(1)}°</div>
       <div class="belt-name">${b.name}</div>
       <div class="belt-wind">${b.wind}</div>
     </div>`).join('');

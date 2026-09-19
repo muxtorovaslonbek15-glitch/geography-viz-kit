@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="uz">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>地球公转 · 黄赤交角 · 二分二至 · 3D 交互演示</title>
+<title>Yer aylanib chiqishi · Ekliptika og'ish burchagi · Tengkunlik va kunturishlar · 3D interaktiv namoyish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -128,64 +128,64 @@
 
   <!-- ── LEFT PANEL ── -->
   <aside class="panel-left">
-    <a class="back-link" href="./index.html">← 返回目录</a>
+    <a class="back-link" href="./index.html">← Mundarijaga qaytish</a>
     <div class="brand-block">
       <div class="brand-sub">Geographic Time · Module 02</div>
       <h1 class="brand-title">Earth <em>Revolution</em></h1>
-      <div style="font-size: 12px; color: var(--text-secondary); margin-top: 6px; line-height: 1.6;">地球公转 · 黄赤交角 · 二分二至 · 四季成因</div>
+      <div style="font-size: 12px; color: var(--text-secondary); margin-top: 6px; line-height: 1.6;">Yer aylanib chiqishi · Ekliptika og'ish burchagi · Tengkunlik va kunturishlar · Fasllar sababi</div>
     </div>
 
     <div class="section">
-      <div class="section-label">知识点</div>
+      <div class="section-label">Mavzular</div>
       <select class="kp-select" id="kp-select">
-        <option value="revolution">地球公转基础</option>
-        <option value="axial-tilt">黄赤交角与四季</option>
-        <option value="solstices">二分二至特征</option>
-        <option value="declination">太阳直射点回归</option>
+        <option value="revolution">Yer aylanib chiqishi asoslari</option>
+        <option value="axial-tilt">Ekliptika og'ish burchagi va fasllar</option>
+        <option value="solstices">Tengkunlik va kunturishlar xususiyatlari</option>
+        <option value="declination">Quyosh tik tushish nuqtasining davriy harakati</option>
       </select>
     </div>
 
     <div class="section">
-      <div class="section-label">公转日期</div>
+      <div class="section-label">Aylanib chiqish sanasi</div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label" id="doy-label">春分 3/21</span>
+          <span class="slider-label" id="doy-label">Bahorgi tengkunlik 3/21</span>
           <span class="slider-value" id="doy-value">doy 80</span>
         </div>
         <input type="range" id="doy" min="0" max="365" value="80" />
       </div>
       <div class="btn-row-4">
-        <button class="btn" data-doy="80">春分</button>
-        <button class="btn" data-doy="172">夏至</button>
-        <button class="btn" data-doy="266">秋分</button>
-        <button class="btn" data-doy="355">冬至</button>
+        <button class="btn" data-doy="80">Bahorgi tengkunlik</button>
+        <button class="btn" data-doy="172">Yozgi kunturish</button>
+        <button class="btn" data-doy="266">Kuzgi tengkunlik</button>
+        <button class="btn" data-doy="355">Qishki kunturish</button>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">黄赤交角（认知冲突）</div>
+      <div class="section-label">Ekliptika og'ish burchagi (tajriba)</div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label">轴倾斜角度</span>
+          <span class="slider-label">O'q og'ish burchagi</span>
           <span class="slider-value" id="tilt-value">23.4°</span>
         </div>
         <input type="range" id="tilt" min="0" max="45" value="23.4" step="0.1" />
       </div>
       <div style="font-size: 11px; color: var(--text-dim); line-height: 1.6;">
-        拖到 <strong style="color:var(--accent-warm)">0°</strong>：四季消失，直射点固定在赤道<br>
-        拖到 <strong style="color:var(--accent-hot)">45°</strong>：极端季节差异，热带扩展
+        <strong style="color:var(--accent-warm)">0°</strong>ga torting: fasllar yo'qoladi, tik tushish nuqtasi ekvatorda qotib qoladi<br>
+        <strong style="color:var(--accent-hot)">45°</strong>ga torting: haddan tashqari fasl farqi, tropik zona kengayadi
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">动画控制</div>
+      <div class="section-label">Animatsiya boshqaruvi</div>
       <div class="btn-row">
-        <button class="btn primary" id="btn-pause">暂停</button>
-        <button class="btn" id="btn-reset-view">重置视角</button>
+        <button class="btn primary" id="btn-pause">To'xtatish</button>
+        <button class="btn" id="btn-reset-view">Ko'rinishni tiklash</button>
       </div>
       <div class="slider-row" style="margin-top: 12px;">
         <div class="slider-header">
-          <span class="slider-label">公转速率</span>
+          <span class="slider-label">Aylanish tezligi</span>
           <span class="slider-value" id="speed-value">20×</span>
         </div>
         <input type="range" id="speed" min="0" max="200" value="20" />
@@ -193,22 +193,22 @@
     </div>
 
     <div class="section">
-      <div class="section-label">视角预设</div>
+      <div class="section-label">Tayyor ko'rinishlar</div>
       <div class="btn-row">
-        <button class="btn" data-view="top">俯视轨道</button>
-        <button class="btn" data-view="side">侧视</button>
+        <button class="btn" data-view="top">Orbitani tepadan</button>
+        <button class="btn" data-view="side">Yon tomondan</button>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">可视化图层</div>
+      <div class="section-label">Vizual qatlamlar</div>
       <div class="check-grid">
-        <label class="check"><input type="checkbox" id="layer-orbit" checked>公转轨道</label>
-        <label class="check"><input type="checkbox" id="layer-axis" checked>地轴</label>
-        <label class="check"><input type="checkbox" id="layer-terminator" checked>晨昏圈</label>
-        <label class="check"><input type="checkbox" id="layer-tropics" checked>回归线</label>
-        <label class="check"><input type="checkbox" id="layer-sunray" checked>太阳光线</label>
-        <label class="check"><input type="checkbox" id="layer-nodes" checked>节气标注</label>
+        <label class="check"><input type="checkbox" id="layer-orbit" checked>Orbita</label>
+        <label class="check"><input type="checkbox" id="layer-axis" checked>Yer o'qi</label>
+        <label class="check"><input type="checkbox" id="layer-terminator" checked>Yorug'lik-qorong'ulik chegarasi</label>
+        <label class="check"><input type="checkbox" id="layer-tropics" checked>Tropiklar</label>
+        <label class="check"><input type="checkbox" id="layer-sunray" checked>Quyosh nurlari</label>
+        <label class="check"><input type="checkbox" id="layer-nodes" checked>Fasl belgilari</label>
       </div>
     </div>
   </aside>
@@ -218,57 +218,57 @@
     <canvas id="three-canvas"></canvas>
     <div class="kp-overlay" id="kp-overlay">
       <div class="kp-overlay-header">
-        <div class="kp-overlay-title">知识点解读</div>
+        <div class="kp-overlay-title">Mavzu tushuntirishi</div>
         <button class="kp-overlay-close" id="kp-close">—</button>
       </div>
       <div class="kp-overlay-body" id="kp-body"></div>
     </div>
     <div class="top-badge">geo · revolution · seasons</div>
     <div class="scene-legend">
-      <div class="lg-item"><span class="lg-swatch" style="background:#f4a853"></span>地轴 / 直射纬线</div>
-      <div class="lg-item"><span class="lg-swatch" style="background:#e85d4a"></span>赤道</div>
-      <div class="lg-item"><span class="lg-swatch" style="background:#6db3d9"></span>晨昏圈</div>
-      <div class="lg-item"><span class="lg-swatch" style="background:rgba(255,255,255,0.3)"></span>轨道面</div>
+      <div class="lg-item"><span class="lg-swatch" style="background:#f4a853"></span>Yer o'qi / tik tushish kengligi</div>
+      <div class="lg-item"><span class="lg-swatch" style="background:#e85d4a"></span>Ekvator</div>
+      <div class="lg-item"><span class="lg-swatch" style="background:#6db3d9"></span>Yorug'lik-qorong'ulik chegarasi</div>
+      <div class="lg-item"><span class="lg-swatch" style="background:rgba(255,255,255,0.3)"></span>Orbita tekisligi</div>
     </div>
-    <div class="instruction">左键拖拽 · 滚轮缩放 · 右键平移</div>
+    <div class="instruction">Chap tugma: aylantirish · G'ildirak: masshtab · O'ng tugma: siljitish</div>
   </main>
 
   <!-- ── RIGHT PANEL ── -->
   <aside class="panel-right">
-    <h2 class="data-title">实时数据</h2>
+    <h2 class="data-title">Real vaqtli ma'lumotlar</h2>
     <div class="data-block">
-      <div class="data-row"><span class="data-label">日期</span><span class="data-value" id="d-date">—</span></div>
-      <div class="data-row"><span class="data-label">黄赤交角</span><span class="data-value accent" id="d-tilt">23.4°</span></div>
-      <div class="data-row"><span class="data-label">太阳直射纬度</span><span class="data-value hot" id="d-decl">+0.0°</span></div>
-      <div class="data-row"><span class="data-label">日地距离（近似）</span><span class="data-value cool" id="d-dist">1.000 AU</span></div>
-      <div class="data-row"><span class="data-label">轨道速度（近似）</span><span class="data-value" id="d-vel">29.8 km/s</span></div>
+      <div class="data-row"><span class="data-label">Sana</span><span class="data-value" id="d-date">—</span></div>
+      <div class="data-row"><span class="data-label">Ekliptika og'ish burchagi</span><span class="data-value accent" id="d-tilt">23.4°</span></div>
+      <div class="data-row"><span class="data-label">Quyosh tik tushish kengligi</span><span class="data-value hot" id="d-decl">+0.0°</span></div>
+      <div class="data-row"><span class="data-label">Yer-Quyosh masofasi (taxminan)</span><span class="data-value cool" id="d-dist">1.000 AU</span></div>
+      <div class="data-row"><span class="data-label">Orbital tezlik (taxminan)</span><span class="data-value" id="d-vel">29.8 km/s</span></div>
     </div>
 
     <div class="data-block">
-      <div class="data-label" style="margin-bottom:10px;">节气对照（北半球）</div>
+      <div class="data-label" style="margin-bottom:10px;">Fasllar taqqoslash (Shim. yarim shar)</div>
       <div class="season-grid">
         <div class="season-card">
-          <div class="season-name" style="color:var(--accent-warm)">春分 3/21</div>
-          <div class="season-data">δ = 0°<br>晨昏圈过两极<br>全球昼=夜</div>
+          <div class="season-name" style="color:var(--accent-warm)">Bahorgi tengkunlik 3/21</div>
+          <div class="season-data">δ = 0°<br>Chegara ikki qutbdan o'tadi<br>Butun dunyoda kun=tun</div>
         </div>
         <div class="season-card">
-          <div class="season-name" style="color:var(--accent-hot)">夏至 6/22</div>
-          <div class="season-data">δ = +23.4°<br>北极极昼<br>北半球昼最长</div>
+          <div class="season-name" style="color:var(--accent-hot)">Yozgi kunturish 6/22</div>
+          <div class="season-data">δ = +23,4°<br>Shim. qutbda kunduz<br>Shim. yarim sharda eng uzun kun</div>
         </div>
         <div class="season-card">
-          <div class="season-name" style="color:var(--accent-cool)">秋分 9/23</div>
-          <div class="season-data">δ = 0°<br>晨昏圈过两极<br>全球昼=夜</div>
+          <div class="season-name" style="color:var(--accent-cool)">Kuzgi tengkunlik 9/23</div>
+          <div class="season-data">δ = 0°<br>Chegara ikki qutbdan o'tadi<br>Butun dunyoda kun=tun</div>
         </div>
         <div class="season-card">
-          <div class="season-name" style="color:#8a95a8">冬至 12/22</div>
-          <div class="season-data">δ = −23.4°<br>南极极昼<br>北半球昼最短</div>
+          <div class="season-name" style="color:#8a95a8">Qishki kunturish 12/22</div>
+          <div class="season-data">δ = −23,4°<br>Jan. qutbda kunduz<br>Shim. yarim sharda eng qisqa kun</div>
         </div>
       </div>
     </div>
 
     <div class="data-block">
       <div class="decl-canvas-wrap">
-        <div class="decl-canvas-label">太阳直射纬度 δ（全年）</div>
+        <div class="decl-canvas-label">Quyosh tik tushish kengligi δ (yil davomida)</div>
         <canvas id="decl-canvas" width="220" height="100"></canvas>
       </div>
     </div>
@@ -303,10 +303,10 @@ const DEG = Math.PI / 180;
 const RAD = 180 / Math.PI;
 
 const KP_DOCS = {
-  'revolution': `<strong>地球公转</strong>：地球沿椭圆轨道绕太阳运行，太阳位于椭圆的一个<strong>焦点</strong>（而非中心）。地球公转一周约 365.25 天，方向为自西向东（从北极俯视为逆时针）。近日点在每年 <strong>1 月初</strong>（约 1.471 亿 km），远日点在 <strong>7 月初</strong>（约 1.521 亿 km）——这说明北半球的"夏热"与日地距离无关，完全由<strong>黄赤交角</strong>决定。`,
-  'axial-tilt': `<strong>黄赤交角</strong>是地球自转轴与公转轨道面（黄道面）法线之间的夹角，目前约 <strong>23.44°</strong>。正是因为地轴在空间中保持方向不变（指向北极星附近）而地球绕太阳公转，才导致太阳直射点在南北回归线之间来回移动，形成四季。将黄赤交角调到 0°，直射点固定赤道，四季消失。调到 45°，热带扩展，季节差异更极端。`,
-  'solstices': `<strong>二分二至</strong>是地球公转过程中的四个特殊节点。<strong>春分（3/21）和秋分（9/23）</strong>：直射点在赤道，晨昏圈过两极，全球昼夜等长。<strong>夏至（6/22）</strong>：直射北回归线（+23.44°），北极圈以内极昼，北半球昼最长。<strong>冬至（12/22）</strong>：直射南回归线（−23.44°），南极圈以内极昼，北半球昼最短。`,
-  'declination': `<strong>太阳直射点</strong>的年回归运动由公式近似：δ = 23.44°·sin(2π·(doy+284)/365.25)。它在 −23.44°（南回归线）到 +23.44°（北回归线）之间往返，周期为一个回归年（365.2422 天）。右侧曲线图实时显示当前日期在年度直射点轨迹中的位置。这条正弦曲线的振幅等于黄赤交角——拖动黄赤交角滑杆可实时观察曲线振幅的变化。`,
+  'revolution': `<strong>Yer aylanib chiqishi</strong>: Yer elliptik orbita bo'ylab Quyosh atrofida aylanadi, Quyosh esa ellipsning <strong>fokusida</strong> joylashgan (markazida emas). Yer bir marta aylanib chiqishi taxminan 365,25 kun davom etadi, yo'nalishi g'arbdan sharqqa (shimoliy qutbdan qaralganda soat strelkasiga teskari). Perigeliy har yili <strong>yanvar boshida</strong> (taxminan 147,1 mln km), afeliy esa <strong>iyul boshida</strong> (taxminan 152,1 mln km) bo'ladi — bu Shimoliy yarim shardagi "yozgi issiqlik" Yer-Quyosh masofasiga bog'liq emasligini, balki to'liq <strong>ekliptika og'ish burchagi</strong> bilan belgilanishini ko'rsatadi.`,
+  'axial-tilt': `<strong>Ekliptika og'ish burchagi</strong> — Yerning aylanish o'qi bilan orbital tekislik (ekliptika)ning normali orasidagi burchak bo'lib, hozirda taxminan <strong>23,44°</strong> ni tashkil qiladi. Aynan Yer o'qi fazoda yo'nalishini o'zgartirmasdan (Shimoliy yulduz tomonga qaratilgan holda) Quyosh atrofida aylanishi tufayli Quyosh tik tushish nuqtasi Shimoliy va Janubiy tropiklar orasida oldinga-orqaga siljib, fasllarni hosil qiladi. Ekliptika og'ish burchagini 0° ga sozlasangiz, tik tushish nuqtasi ekvatorda qotib qoladi va fasllar yo'qoladi. 45° ga sozlasangiz, tropik zona kengayadi va fasl farqi yanada keskinlashadi.`,
+  'solstices': `<strong>Tengkunlik va kunturishlar</strong> — Yer aylanib chiqish jarayonidagi to'rtta alohida nuqta. <strong>Bahorgi (3/21) va kuzgi (9/23) tengkunliklar</strong>: tik tushish nuqtasi ekvatorda, chegara ikki qutbdan o'tadi, butun dunyoda kun va tun teng. <strong>Yozgi kunturish (6/22)</strong>: tik tushish Shimoliy tropikda (+23,44°), Shimoliy qutb doirasi ichida kunduz, Shimoliy yarim sharda eng uzun kun. <strong>Qishki kunturish (12/22)</strong>: tik tushish Janubiy tropikda (−23,44°), Janubiy qutb doirasi ichida kunduz, Shimoliy yarim sharda eng qisqa kun.`,
+  'declination': `<strong>Quyosh tik tushish nuqtasi</strong>ning yillik davriy harakati quyidagi formula bilan taqribiy hisoblanadi: δ = 23,44°·sin(2π·(doy+284)/365,25). U −23,44° (Janubiy tropik) va +23,44° (Shimoliy tropik) orasida oldinga-orqaga harakatlanadi, davri bir tropik yil (365,2422 kun). O'ng tomondagi grafik hozirgi sananing yillik tik tushish trayektoriyasidagi o'rnini real vaqtda ko'rsatadi. Bu sinusoidal egri chiziqning amplitudasi ekliptika og'ish burchagiga teng — burchak slayderini surib, amplituda o'zgarishini real vaqtda kuzatishingiz mumkin.`,
 };
 
 // ====================== THREE SETUP ======================
@@ -401,7 +401,7 @@ sunMesh.add(sunGlow);
 
 // Sun label
 const sunLabelEl = document.createElement('div');
-sunLabelEl.textContent = '太阳';
+sunLabelEl.textContent = 'Quyosh';
 sunLabelEl.style.cssText = `color:#f4a853;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-shadow:0 0 8px rgba(0,0,0,0.9);transform:translate(12px,-8px);pointer-events:none;`;
 const sunLabel = new CSS2DObject(sunLabelEl);
 sunLabel.position.set(0.4, 0, 0);
@@ -434,9 +434,9 @@ function makeOrbitalMarker(text, x, z, color) {
   return obj;
 }
 // Aphelion θ=0: x = ORBIT_C + ORBIT_A, z = 0
-scene.add(makeOrbitalMarker('远日点 7月', ORBIT_C + ORBIT_A + 0.3, 0, '#6db3d9'));
+scene.add(makeOrbitalMarker('Afeliy 7-oy', ORBIT_C + ORBIT_A + 0.3, 0, '#6db3d9'));
 // Perihelion θ=π: x = ORBIT_C - ORBIT_A, z = 0
-scene.add(makeOrbitalMarker('近日点 1月', ORBIT_C - ORBIT_A - 0.3, 0, '#f4a853'));
+scene.add(makeOrbitalMarker('Perigeliy 1-oy', ORBIT_C - ORBIT_A - 0.3, 0, '#f4a853'));
 
 // ====================== SEASON NODES ======================
 // Four season positions on the orbit (doy → θ)
@@ -463,10 +463,10 @@ function earthPosFromDoy(doy) {
 }
 
 const SEASONS = [
-  { name: '春分 3/21', doy: 80,  color: '#7dc48a' },
-  { name: '夏至 6/22', doy: 173, color: '#f4a853' },
-  { name: '秋分 9/23', doy: 266, color: '#6db3d9' },
-  { name: '冬至 12/22',doy: 356, color: '#8a95a8' },
+  { name: 'Bahorgi tengk. 3/21', doy: 80,  color: '#7dc48a' },
+  { name: 'Yozgi kunt. 6/22', doy: 173, color: '#f4a853' },
+  { name: 'Kuzgi tengk. 9/23', doy: 266, color: '#6db3d9' },
+  { name: 'Qishki kunt. 12/22',doy: 356, color: '#8a95a8' },
 ];
 const seasonNodesGroup = new THREE.Group();
 SEASONS.forEach(s => {
@@ -793,7 +793,7 @@ speedInput.addEventListener('input', () => {
 const pauseBtn = document.getElementById('btn-pause');
 pauseBtn.addEventListener('click', () => {
   state.paused = !state.paused;
-  pauseBtn.textContent = state.paused ? '继续' : '暂停';
+  pauseBtn.textContent = state.paused ? 'Davom etish' : "To'xtatish";
 });
 document.getElementById('btn-reset-view').addEventListener('click', () => {
   camera.position.set(0, 10, 14);
@@ -866,7 +866,7 @@ function dateFromDOY(doy) {
   const d = new Date(2025, 0, 1);
   d.setDate(d.getDate() + Math.round(doy));
   const m = d.getMonth() + 1, day = d.getDate();
-  const specials = [{doy:80,n:'春分'},{doy:173,n:'夏至'},{doy:266,n:'秋分'},{doy:356,n:'冬至'}];
+  const specials = [{doy:80,n:'Bahorgi tengk.'},{doy:173,n:'Yozgi kunt.'},{doy:266,n:'Kuzgi tengk.'},{doy:356,n:'Qishki kunt.'}];
   let prefix = '';
   for (const s of specials) { if (Math.abs(doy-s.doy)<4) prefix = s.n+' · '; }
   return `${prefix}${m}/${day}`;

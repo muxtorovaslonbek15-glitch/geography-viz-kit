@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="uz">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>昼夜长短变化 · 3D 交互演示</title>
+<title>Kun-tun uzunligining o'zgarishi · 3D interaktiv namoyish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -69,36 +69,36 @@
 <div id="app">
   <!-- LEFT PANEL -->
   <div class="panel-left">
-    <a class="back-link" href="./index.html">← 返回目录</a>
+    <a class="back-link" href="./index.html">← Mundarijaga qaytish</a>
     <div class="brand-block">
-      <div class="brand-title">昼夜<em>长短变化</em></div>
+      <div class="brand-title">Kun-tun <em>uzunligining o'zgarishi</em></div>
       <div class="brand-sub">Module 06 · Day Length Variation</div>
     </div>
 
     <div class="section">
-      <div class="section-label">知识点</div>
+      <div class="section-label">Mavzular</div>
       <select class="kp-select" id="kp-sel">
-        <option value="cosH0">昼弧公式 cos H₀ = −tan φ · tan δ</option>
-        <option value="summer">夏半年：北半球昼长夜短</option>
-        <option value="winter">冬半年：北半球昼短夜长</option>
-        <option value="equinox">春秋分：全球昼夜平分</option>
-        <option value="polar">极昼极夜：极圈以内</option>
-        <option value="law">昼长随纬度和季节的变化规律</option>
+        <option value="cosH0">Kun yoyi formulasi cos H₀ = −tan φ · tan δ</option>
+        <option value="summer">Yozgi yarim yil: Shim. yarim sharda kun uzun, tun qisqa</option>
+        <option value="winter">Qishki yarim yil: Shim. yarim sharda kun qisqa, tun uzun</option>
+        <option value="equinox">Tengkunlik: butun dunyoda kun va tun teng</option>
+        <option value="polar">Qutb kunduzi va tuni: qutb doirasi ichida</option>
+        <option value="law">Kun uzunligining kenglik va fasl bo'yicha o'zgarish qonuniyati</option>
       </select>
     </div>
 
     <div class="section">
-      <div class="section-label">参数控制</div>
+      <div class="section-label">Parametrlarni boshqarish</div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label">日期（第几天）</span>
+          <span class="slider-label">Sana (yilning necha kuni)</span>
           <span class="slider-value" id="doy-val">172</span>
         </div>
         <input type="range" id="doy" min="1" max="365" value="172" step="1">
       </div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label">观测纬度 φ</span>
+          <span class="slider-label">Kuzatish kengligi φ</span>
           <span class="slider-value" id="lat-val">40°N</span>
         </div>
         <input type="range" id="lat" min="-90" max="90" value="40" step="0.5">
@@ -106,21 +106,21 @@
     </div>
 
     <div class="section">
-      <div class="section-label">快速日期</div>
+      <div class="section-label">Tezkor sana</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
-        <button class="btn" onclick="setDoy(172)">夏至 6/21</button>
-        <button class="btn" onclick="setDoy(355)">冬至 12/22</button>
-        <button class="btn" onclick="setDoy(80)">春分 3/21</button>
-        <button class="btn" onclick="setDoy(264)">秋分 9/23</button>
+        <button class="btn" onclick="setDoy(172)">Yozgi kunt. 6/21</button>
+        <button class="btn" onclick="setDoy(355)">Qishki kunt. 12/22</button>
+        <button class="btn" onclick="setDoy(80)">Bahorgi tengk. 3/21</button>
+        <button class="btn" onclick="setDoy(264)">Kuzgi tengk. 9/23</button>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">公式</div>
+      <div class="section-label">Formula</div>
       <div class="formula-box">
         <div class="formula-text">cos H₀ = −tan φ · tan δ</div>
         <div class="formula-text">T = 2H₀ / 15°/h</div>
-        <div class="formula-sub">H₀：半昼弧度数（°）<br>T：昼长（小时）<br>δ：太阳赤纬（°）<br>φ：观测纬度（°）</div>
+        <div class="formula-sub">H₀: yarim kun yoyi darajasi (°)<br>T: kun uzunligi (soat)<br>δ: Quyosh deklinatsiyasi (°)<br>φ: kuzatish kengligi (°)</div>
       </div>
     </div>
   </div>
@@ -130,7 +130,7 @@
     <canvas id="three-canvas"></canvas>
     <div class="kp-overlay" id="kp-overlay">
       <div class="kp-overlay-header">
-        <span class="kp-overlay-title">知识点说明</span>
+        <span class="kp-overlay-title">Mavzu tushuntirishi</span>
         <button class="kp-overlay-close" onclick="document.getElementById('kp-overlay').hidden=true">×</button>
       </div>
       <div class="kp-overlay-body" id="kp-body">—</div>
@@ -140,37 +140,37 @@
   <!-- RIGHT PANEL -->
   <div class="panel-right">
     <div class="data-section">
-      <div class="data-label">当前昼长</div>
-      <div><span class="data-value" id="dl-val">—</span><span class="data-unit">小时</span></div>
+      <div class="data-label">Joriy kun uzunligi</div>
+      <div><span class="data-value" id="dl-val">—</span><span class="data-unit">soat</span></div>
     </div>
     <div class="data-section">
-      <div class="data-row"><span class="data-row-label">太阳赤纬 δ</span><span class="data-row-val" id="decl-val">—</span></div>
-      <div class="data-row"><span class="data-row-label">半昼弧 H₀</span><span class="data-row-val" id="h0-val">—</span></div>
-      <div class="data-row"><span class="data-row-label">日出（地方时）</span><span class="data-row-val" id="rise-val">—</span></div>
-      <div class="data-row"><span class="data-row-label">日落（地方时）</span><span class="data-row-val" id="set-val">—</span></div>
-      <div class="data-row"><span class="data-row-label">极昼/极夜</span><span class="data-row-val" id="polar-val">否</span></div>
+      <div class="data-row"><span class="data-row-label">Quyosh deklinatsiyasi δ</span><span class="data-row-val" id="decl-val">—</span></div>
+      <div class="data-row"><span class="data-row-label">Yarim kun yoyi H₀</span><span class="data-row-val" id="h0-val">—</span></div>
+      <div class="data-row"><span class="data-row-label">Quyosh chiqishi (mahalliy vaqt)</span><span class="data-row-val" id="rise-val">—</span></div>
+      <div class="data-row"><span class="data-row-label">Quyosh botishi (mahalliy vaqt)</span><span class="data-row-val" id="set-val">—</span></div>
+      <div class="data-row"><span class="data-row-label">Qutb kunduzi/tuni</span><span class="data-row-val" id="polar-val">Yo'q</span></div>
     </div>
 
     <div class="data-section">
-      <div class="data-label">昼长热力图（纬度×日期）</div>
+      <div class="data-label">Kun uzunligi issiqlik xaritasi (kenglik × sana)</div>
       <div class="heatmap-wrap"><canvas class="heatmap" id="heatmap" width="240" height="180"></canvas></div>
       <div class="heatmap-legend">
         <span>0h</span><span>6h</span><span>12h</span><span>18h</span><span>24h</span>
       </div>
-      <div style="font-size:10px;color:var(--text-dim);margin-top:6px;font-family:var(--font-mono);">✕ 当前位置</div>
+      <div style="font-size:10px;color:var(--text-dim);margin-top:6px;font-family:var(--font-mono);">✕ Joriy nuqta</div>
     </div>
 
     <div class="data-section">
-      <div class="data-label">纬度对比（当前日期）</div>
+      <div class="data-label">Kenglik taqqoslash (joriy sana)</div>
       <table class="lat-table">
-        <thead><tr><th>纬度</th><th>昼长(h)</th><th>状态</th></tr></thead>
+        <thead><tr><th>Kenglik</th><th>Kun uzun.(soat)</th><th>Holat</th></tr></thead>
         <tbody id="lat-table-body"></tbody>
       </table>
     </div>
 
     <div class="struggle-box">
-      <div class="struggle-label">认知冲突</div>
-      <div class="struggle-text">把纬度拖至 90°N（北极）——夏至时昼长 <strong>24h</strong>，冬至时昼长 <strong>0h</strong>。极圈内存在极昼极夜，而非只是昼长"稍长"。</div>
+      <div class="struggle-label">Kutilmagan holat</div>
+      <div class="struggle-text">Kenglikni 90°N (Shimoliy qutb)ga torting — yozgi kunturishda kun uzunligi <strong>24 soat</strong>, qishki kunturishda esa <strong>0 soat</strong> bo'ladi. Qutb doirasi ichida qutb kunduzi va tuni mavjud, bu shunchaki kun "biroz uzunroq" bo'lishi emas.</div>
     </div>
   </div>
 </div>
@@ -190,12 +190,12 @@ import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer
 
 // ── KP docs ──────────────────────────────────────────────────────────────────
 const KP_DOCS = {
-  cosH0:`<strong>cos H₀ = −tan φ · tan δ</strong><br>H₀为半昼弧度数（°）。昼长 T = 2H₀/15（小时）。<br>当 |tan φ · tan δ| > 1 时方程无解：极昼（δ·φ > 0 且值大）或极夜（δ·φ < 0 且值大）。`,
-  summer:`北半球夏半年（3/21—9/23）：δ > 0，北纬各地昼长 > 12h；纬度越高昼越长；北极圈以内出现极昼。`,
-  winter:`北半球冬半年（9/23—3/21）：δ < 0，北纬各地昼长 < 12h；纬度越高昼越短；北极圈以内出现极夜。南半球与之相反。`,
-  equinox:`春分（约3/21，doy≈80）和秋分（约9/23，doy≈264）：δ ≈ 0°，全球各纬度昼夜各 12h。晨昏线过南北极点，与经线重合。`,
-  polar:`极圈（±66.56°）以内：当 |δ| + |φ| ≥ 90° 时出现极昼；|δ| − |φ| ≤ −90° 时出现极夜。南北极点每年各有约半年极昼、半年极夜。`,
-  law:`规律：①同一日期，纬度绝对值越大，与赤道昼长差异越大；②同一纬度，夏至/冬至是极值，春秋分是平均值；③南北半球同纬度绝对值的点昼夜互补（昼长之和=24h）。`
+  cosH0:`<strong>cos H₀ = −tan φ · tan δ</strong><br>H₀ — yarim kun yoyi darajasi (°). Kun uzunligi T = 2H₀/15 (soat).<br>|tan φ · tan δ| > 1 bo'lganda tenglama yechimga ega bo'lmaydi: qutb kunduzi (δ·φ > 0 va qiymati katta) yoki qutb tuni (δ·φ < 0 va qiymati katta).`,
+  summer:`Shim. yarim shar yozgi yarim yili (3/21—9/23): δ > 0, shimoliy kengliklarda kun uzunligi > 12 soat; kenglik qanchalik yuqori bo'lsa, kun shunchalik uzun; Shim. qutb doirasi ichida qutb kunduzi kuzatiladi.`,
+  winter:`Shim. yarim shar qishki yarim yili (9/23—3/21): δ < 0, shimoliy kengliklarda kun uzunligi < 12 soat; kenglik qanchalik yuqori bo'lsa, kun shunchalik qisqa; Shim. qutb doirasi ichida qutb tuni kuzatiladi. Janubiy yarim sharda esa aksincha.`,
+  equinox:`Bahorgi tengkunlik (taxminan 3/21, doy≈80) va kuzgi tengkunlik (taxminan 9/23, doy≈264): δ ≈ 0°, dunyoning barcha kengliklarida kun va tun 12 soatdan. Yorug'lik-qorong'ulik chegarasi ikki qutbdan o'tib, meridianlar bilan mos tushadi.`,
+  polar:`Qutb doirasi (±66,56°) ichida: |δ| + |φ| ≥ 90° bo'lganda qutb kunduzi, |δ| − |φ| ≤ −90° bo'lganda qutb tuni kuzatiladi. Shimoliy va Janubiy qutblarda har yili taxminan yarim yil qutb kunduzi, yarim yil qutb tuni bo'ladi.`,
+  law:`Qonuniyat: ① bir xil sanada, kenglikning mutlaq qiymati qanchalik katta bo'lsa, ekvatordan kun uzunligi farqi shunchalik katta bo'ladi; ② bir xil kenglikda, yozgi/qishki kunturish — ekstremal qiymatlar, tengkunliklar — o'rtacha qiymat; ③ Shimoliy va Janubiy yarim sharda bir xil mutlaq kenglikdagi nuqtalarning kun-tuni bir-birini to'ldiradi (kun uzunliklari yig'indisi = 24 soat).`
 };
 document.getElementById('kp-sel').addEventListener('change', e=>{
   const el = document.getElementById('kp-overlay');
@@ -301,7 +301,7 @@ earthGroup.add(obsDot);
 // CSS2D label for observer
 const obsDiv = document.createElement('div');
 obsDiv.style.cssText='font-family:monospace;font-size:11px;color:#7dc48a;white-space:nowrap;background:rgba(7,10,19,.7);padding:2px 5px;border-radius:2px;';
-obsDiv.textContent='观测点';
+obsDiv.textContent='Kuzatish nuqtasi';
 const obsLabel = new CSS2DObject(obsDiv);
 obsDot.add(obsLabel);
 
@@ -370,20 +370,20 @@ function update(){
   const mn = 'JFMAMJJASOND';
   document.getElementById('lat-val').textContent = lat>=0 ? lat+'°N' : (-lat)+'°S';
   document.getElementById('decl-val').textContent = decl.toFixed(2)+'°';
-  document.getElementById('h0-val').textContent = H0 ? H0.toFixed(1)+'°' : (cosH0<=-1?'极昼':'极夜');
+  document.getElementById('h0-val').textContent = H0 ? H0.toFixed(1)+'°' : (cosH0<=-1?'Qutb kunduzi':'Qutb tuni');
   document.getElementById('dl-val').textContent = dl.toFixed(2);
   const riseH = 12 - dl/2, setH = 12 + dl/2;
   const fmt = h=>{ const hh=Math.floor(h); const mm=Math.round((h-hh)*60); return hh+':'+(mm<10?'0':'')+mm; };
-  document.getElementById('rise-val').textContent = dl<=0 ? '极夜' : (dl>=24 ? '极昼' : fmt(riseH));
-  document.getElementById('set-val').textContent = dl<=0 ? '极夜' : (dl>=24 ? '极昼' : fmt(setH));
-  document.getElementById('polar-val').textContent = dl<=0?'极夜':(dl>=24?'极昼':'否');
+  document.getElementById('rise-val').textContent = dl<=0 ? 'Qutb tuni' : (dl>=24 ? 'Qutb kunduzi' : fmt(riseH));
+  document.getElementById('set-val').textContent = dl<=0 ? 'Qutb tuni' : (dl>=24 ? 'Qutb kunduzi' : fmt(setH));
+  document.getElementById('polar-val').textContent = dl<=0?'Qutb tuni':(dl>=24?'Qutb kunduzi':'Yo\'q');
 
   // Lat table
   const refLats = [90,66.56,40,0,-40,-66.56,-90];
   const tbody = document.getElementById('lat-table-body');
   tbody.innerHTML = refLats.map(l=>{
     const d2=dayLength(l,decl);
-    const status = d2<=0?'极夜':(d2>=24?'极昼':'—');
+    const status = d2<=0?'Qutb tuni':(d2>=24?'Qutb kunduzi':'—');
     const hl = l===lat?'hl':'';
     return `<tr><td class="${hl}">${l>=0?l+'N':(-l)+'S'}</td><td class="${hl}">${d2.toFixed(1)}</td><td class="${hl}">${status}</td></tr>`;
   }).join('');

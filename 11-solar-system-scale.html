@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="uz">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>太阳系比例模型 · 3D 交互演示</title>
+<title>Quyosh tizimi masshtab modeli · 3D interaktiv namoyish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -64,51 +64,51 @@
 <div id="app">
   <!-- LEFT PANEL -->
   <div class="panel-left">
-    <a class="back-link" href="./index.html">← 返回目录</a>
+    <a class="back-link" href="./index.html">← Mundarijaga qaytish</a>
     <div class="brand-block">
-      <div class="brand-title">太阳系<em>比例模型</em></div>
+      <div class="brand-title">Quyosh tizimi <em>masshtab modeli</em></div>
       <div class="brand-sub">Module 11 · Solar System Scale</div>
     </div>
 
     <div class="section">
-      <div class="section-label">知识点</div>
+      <div class="section-label">Mavzular</div>
       <select class="kp-select" id="kp-sel">
-        <option value="scale">真实比例：太阳系有多空旷</option>
-        <option value="sizes">行星大小对比</option>
-        <option value="inner">内太阳系：类地行星</option>
-        <option value="outer">外太阳系：气态巨星</option>
-        <option value="voyager">旅行者1号的旅程</option>
+        <option value="scale">Haqiqiy masshtab: Quyosh tizimi qanchalik bo'sh</option>
+        <option value="sizes">Sayyoralar o'lchamini taqqoslash</option>
+        <option value="inner">Ichki Quyosh tizimi: Yerga o'xshash sayyoralar</option>
+        <option value="outer">Tashqi Quyosh tizimi: gaz gigantlari</option>
+        <option value="voyager">Voyager-1 ning safari</option>
       </select>
     </div>
 
     <div class="section">
-      <div class="section-label">距离比例尺</div>
+      <div class="section-label">Masofa masshtabi</div>
       <div class="scale-toggle">
-        <button class="scale-btn active" id="btn-log" onclick="setScale('log')">对数</button>
-        <button class="scale-btn" id="btn-lin" onclick="setScale('linear')">线性</button>
+        <button class="scale-btn active" id="btn-log" onclick="setScale('log')">Logarifmik</button>
+        <button class="scale-btn" id="btn-lin" onclick="setScale('linear')">Chiziqli</button>
       </div>
       <div style="font-size:11px;color:var(--text-dim);line-height:1.6;">
-        对数比例：显示所有行星。<br>
-        线性比例：真实距离——外行星几乎看不见！
+        Logarifmik masshtab: barcha sayyoralarni ko'rsatadi.<br>
+        Chiziqli masshtab: haqiqiy masofa — tashqi sayyoralar deyarli ko'rinmaydi!
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">大小比例尺</div>
+      <div class="section-label">O'lcham masshtabi</div>
       <div class="check-grid" style="grid-template-columns:1fr;">
-        <label class="check"><input type="checkbox" id="sz-real"> 真实相对大小（极小！）</label>
-        <label class="check"><input type="checkbox" id="sz-orbits" checked> 显示轨道圆</label>
-        <label class="check"><input type="checkbox" id="sz-labels" checked> 名称标注</label>
-        <label class="check"><input type="checkbox" id="sz-animate" checked> 轨道动画</label>
+        <label class="check"><input type="checkbox" id="sz-real"> Haqiqiy nisbiy o'lcham (juda kichik!)</label>
+        <label class="check"><input type="checkbox" id="sz-orbits" checked> Orbita doiralarini ko'rsatish</label>
+        <label class="check"><input type="checkbox" id="sz-labels" checked> Nom yorliqlari</label>
+        <label class="check"><input type="checkbox" id="sz-animate" checked> Orbita animatsiyasi</label>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">快速跳转</div>
-      <button class="btn" onclick="focusPlanet(0)">☀ 太阳系全景</button>
-      <button class="btn" onclick="focusPlanet(3)">🌍 地球 (1 AU)</button>
-      <button class="btn" onclick="focusPlanet(5)">🪐 木星 (5.2 AU)</button>
-      <button class="btn" onclick="focusPlanet(7)">⬡ 海王星 (30 AU)</button>
+      <div class="section-label">Tezkor o'tish</div>
+      <button class="btn" onclick="focusPlanet(0)">☀ Quyosh tizimi umumiy</button>
+      <button class="btn" onclick="focusPlanet(3)">🌍 Yer (1 AU)</button>
+      <button class="btn" onclick="focusPlanet(5)">🪐 Yupiter (5.2 AU)</button>
+      <button class="btn" onclick="focusPlanet(7)">⬡ Neptun (30 AU)</button>
     </div>
   </div>
 
@@ -117,7 +117,7 @@
     <canvas id="three-canvas"></canvas>
     <div class="kp-overlay" id="kp-overlay" hidden>
       <div class="kp-overlay-header">
-        <span class="kp-overlay-title">知识点说明</span>
+        <span class="kp-overlay-title">Mavzu tushuntirishi</span>
         <button class="kp-overlay-close" onclick="document.getElementById('kp-overlay').hidden=true">×</button>
       </div>
       <div class="kp-overlay-body" id="kp-body">—</div>
@@ -127,14 +127,14 @@
   <!-- RIGHT PANEL -->
   <div class="panel-right">
     <div class="data-section">
-      <div class="data-label">八大行星</div>
+      <div class="data-label">8 ta sayyora</div>
       <div id="planet-list"></div>
     </div>
     <div class="struggle-box">
-      <div class="struggle-label">认知冲突</div>
+      <div class="struggle-label">Kutilmagan holat</div>
       <div class="struggle-text">
-        切换到<strong>线性比例</strong>：如果太阳是一个篮球（直径24cm），地球距离约26米，而海王星距离约800米——几乎一公里之外，且地球是一颗绿豆大小（2.2mm）。<br><br>
-        太阳系 99.86% 的质量在太阳，其余全部行星加起来不足 0.14%。
+        <strong>Chiziqli masshtab</strong>ga o'ting: agar Quyosh basketbol to'pi bo'lsa (diametri 24 sm), Yer taxminan 26 metr uzoqlikda, Neptun esa taxminan 800 metr uzoqlikda — deyarli bir kilometr naridan, va Yer no'xat donasi kattaligida bo'ladi (2,2 mm).<br><br>
+        Quyosh tizimi massasining 99,86% i Quyoshda, qolgan barcha sayyoralarning yig'indisi esa 0,14% dan kam.
       </div>
     </div>
   </div>
@@ -154,11 +154,11 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 
 const KP_DOCS={
-  scale:`<strong>太阳系的空旷</strong>：99.9%以上的体积是真空。如果把太阳缩小到1米直径，地球在105米处，直径约9mm；海王星在3.2km处，直径约37mm。行星在太阳系中如同针尖落在足球场上。`,
-  sizes:`<strong>行星大小对比</strong>：太阳直径约139.2万km。<br>最大行星：木星（太阳1/10，地球11倍）。<br>地球直径：12,742km。<br>最小行星：水星（地球0.38倍）。<br>如果木星是篮球，地球是高尔夫球，水星是弹珠。`,
-  inner:`<strong>内太阳系（类地行星）</strong>：水、金、地、火。固态岩石行星，密度大，半径小，距日近（0.39–1.52 AU）。相互间距在数百万到数亿km。`,
-  outer:`<strong>外太阳系（气态巨星）</strong>：木、土、天王、海王。体积庞大，密度低，主要由氢氦气体/冰组成。距日5.2–30AU，围绕太阳运行周期11–165年。`,
-  voyager:`<strong>旅行者1号</strong>：1977年发射，已飞行约230亿km（约153AU）。2012年进入星际空间（日球层顶），是人类制造的最远飞行器。以当前速度飞往最近恒星（4.2光年）需约7.5万年。`
+  scale:`<strong>Quyosh tizimining bo'shligi</strong>: hajmning 99,9% dan ortig'i bo'shliq. Agar Quyoshni 1 metrgacha kichraytirsak, Yer 105 metr masofada, diametri taxminan 9 mm bo'ladi; Neptun 3,2 km masofada, diametri taxminan 37 mm bo'ladi. Sayyoralar Quyosh tizimida futbol maydonidagi igna uchiga o'xshaydi.`,
+  sizes:`<strong>Sayyoralar o'lchamini taqqoslash</strong>: Quyoshning diametri taxminan 1,392 mln km.<br>Eng katta sayyora: Yupiter (Quyoshning 1/10 qismi, Yerdan 11 marta katta).<br>Yer diametri: 12 742 km.<br>Eng kichik sayyora: Merkuriy (Yerning 0,38 qismi).<br>Agar Yupiter basketbol to'pi bo'lsa, Yer golf to'pi, Merkuriy esa sharcha kabi bo'ladi.`,
+  inner:`<strong>Ichki Quyosh tizimi (Yerga o'xshash sayyoralar)</strong>: Merkuriy, Venera, Yer, Mars. Qattiq tosh sayyoralar, zichligi katta, radiusi kichik, Quyoshga yaqin (0,39–1,52 AU). O'zaro masofasi bir necha milliondan bir necha yuz million km gacha.`,
+  outer:`<strong>Tashqi Quyosh tizimi (gaz gigantlari)</strong>: Yupiter, Saturn, Uran, Neptun. Hajmi ulkan, zichligi past, asosan vodorod-geliy gazi/muzdan tashkil topgan. Quyoshdan 5,2–30 AU masofada, Quyosh atrofida aylanish davri 11–165 yil.`,
+  voyager:`<strong>Voyager-1</strong>: 1977 yilda uchirilgan, hozirgacha taxminan 23 milliard km (taxminan 153 AU) uchib o'tgan. 2012 yilda yulduzlararo fazoga kirgan (geliopauza), insoniyat yasagan eng uzoqqa uchgan qurilma. Hozirgi tezlikda eng yaqin yulduzga (4,2 yorug'lik yili) yetish uchun taxminan 75 ming yil kerak bo'ladi.`
 };
 document.getElementById('kp-sel').addEventListener('change',e=>{
   const el=document.getElementById('kp-overlay');
@@ -168,14 +168,14 @@ document.getElementById('kp-sel').addEventListener('change',e=>{
 
 // ── Planet data ────────────────────────────────────────────────────────────────
 const PLANETS=[
-  {name:'水星', zh:'Mercury', a:0.387, r_km:2439, color:0xa0a0a0, period:0.241, e:0.206},
-  {name:'金星', zh:'Venus',   a:0.723, r_km:6052, color:0xddc080, period:0.615, e:0.007},
-  {name:'地球', zh:'Earth',   a:1.000, r_km:6371, color:0x4488cc, period:1.000, e:0.017},
-  {name:'火星', zh:'Mars',    a:1.524, r_km:3390, color:0xcc5533, period:1.881, e:0.093},
-  {name:'木星', zh:'Jupiter', a:5.203, r_km:69911, color:0xcc9944, period:11.86, e:0.049},
-  {name:'土星', zh:'Saturn',  a:9.537, r_km:58232, color:0xddcc88, period:29.46, e:0.057},
-  {name:'天王星',zh:'Uranus', a:19.19, r_km:25362, color:0x88ddee, period:84.01, e:0.046},
-  {name:'海王星',zh:'Neptune',a:30.07, r_km:24622, color:0x4466cc, period:164.8, e:0.010},
+  {name:'Merkuriy', zh:'Mercury', a:0.387, r_km:2439, color:0xa0a0a0, period:0.241, e:0.206},
+  {name:'Venera', zh:'Venus',   a:0.723, r_km:6052, color:0xddc080, period:0.615, e:0.007},
+  {name:'Yer', zh:'Earth',   a:1.000, r_km:6371, color:0x4488cc, period:1.000, e:0.017},
+  {name:'Mars', zh:'Mars',    a:1.524, r_km:3390, color:0xcc5533, period:1.881, e:0.093},
+  {name:'Yupiter', zh:'Jupiter', a:5.203, r_km:69911, color:0xcc9944, period:11.86, e:0.049},
+  {name:'Saturn', zh:'Saturn',  a:9.537, r_km:58232, color:0xddcc88, period:29.46, e:0.057},
+  {name:'Uran',zh:'Uranus', a:19.19, r_km:25362, color:0x88ddee, period:84.01, e:0.046},
+  {name:'Neptun',zh:'Neptune',a:30.07, r_km:24622, color:0x4466cc, period:164.8, e:0.010},
 ];
 const SUN_R_KM=695700;
 
@@ -235,7 +235,7 @@ const sunMesh=new THREE.Mesh(new THREE.SphereGeometry(sunSize,32,24),new THREE.M
 scene.add(sunMesh);
 const sunDiv=document.createElement('div');
 sunDiv.style.cssText='font-family:monospace;font-size:11px;color:#ffe080;background:rgba(5,8,17,.8);padding:2px 6px;border-radius:2px;';
-sunDiv.textContent='太阳';
+sunDiv.textContent='Quyosh';
 const sunLbl=new CSS2DObject(sunDiv); sunLbl.position.set(0,0.7,0);
 sunMesh.add(sunLbl);
 
@@ -293,7 +293,7 @@ function buildPlanetList(){
         <span class="planet-card-name">${p.name}</span>
         <span class="planet-card-dist">${p.a} AU</span>
       </div>
-      <div class="planet-card-size">半径 ${p.r_km.toLocaleString()} km · 周期 ${p.period} 年</div>
+      <div class="planet-card-size">Radiusi ${p.r_km.toLocaleString()} km · Davri ${p.period} yil</div>
     </div>`).join('');
 }
 buildPlanetList();

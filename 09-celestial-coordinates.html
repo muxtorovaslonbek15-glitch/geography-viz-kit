@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="uz">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>赤道坐标系 · 天球 · 3D 交互演示</title>
+<title>Ekvatorial koordinatalar tizimi · Osmon sferasi · 3D interaktiv namoyish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -68,35 +68,35 @@
 <div id="app">
   <!-- LEFT PANEL -->
   <div class="panel-left">
-    <a class="back-link" href="./index.html">← 返回目录</a>
+    <a class="back-link" href="./index.html">← Mundarijaga qaytish</a>
     <div class="brand-block">
-      <div class="brand-title"><em>赤道</em>坐标系</div>
+      <div class="brand-title"><em>Ekvatorial</em> koordinatalar tizimi</div>
       <div class="brand-sub">Module 09 · Equatorial Coordinates</div>
     </div>
 
     <div class="section">
-      <div class="section-label">知识点</div>
+      <div class="section-label">Mavzular</div>
       <select class="kp-select" id="kp-sel">
-        <option value="equatorial">赤道坐标系：赤经α与赤纬δ</option>
-        <option value="ecliptic">黄道面与黄赤交角</option>
-        <option value="equinox">春分点γ与赤经零点</option>
-        <option value="star">著名天体坐标</option>
-        <option value="analemma">日行迹（Analemma）</option>
+        <option value="equatorial">Ekvatorial koordinatalar: to'g'ri ko'tarilish α va deklinatsiya δ</option>
+        <option value="ecliptic">Ekliptika tekisligi va ekliptika og'ish burchagi</option>
+        <option value="equinox">Bahorgi tengkunlik nuqtasi γ va to'g'ri ko'tarilish nol nuqtasi</option>
+        <option value="star">Mashhur samoviy jismlarning koordinatalari</option>
+        <option value="analemma">Quyosh izi (Analemma)</option>
       </select>
     </div>
 
     <div class="section">
-      <div class="section-label">天体位置</div>
+      <div class="section-label">Samoviy jism o'rni</div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label">赤经 α（时角）</span>
+          <span class="slider-label">To'g'ri ko'tarilish α (soat burchagi)</span>
           <span class="slider-value" id="ra-val">6h</span>
         </div>
         <input type="range" id="ra" min="0" max="24" value="6" step="0.1">
       </div>
       <div class="slider-row">
         <div class="slider-header">
-          <span class="slider-label">赤纬 δ</span>
+          <span class="slider-label">Deklinatsiya δ</span>
           <span class="slider-value" id="dec-val">23.4°</span>
         </div>
         <input type="range" id="dec" min="-90" max="90" value="23.4" step="0.1">
@@ -104,33 +104,33 @@
     </div>
 
     <div class="section">
-      <div class="section-label">快速天体</div>
+      <div class="section-label">Tezkor samoviy jismlar</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
-        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="goStar(5.92,7.41)">参宿四 Betelgeuse</button>
-        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="goStar(6.75,16.72)">天狼 Sirius</button>
-        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="goStar(0,0)">春分点 γ</button>
-        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="goStar(18.62,38.78)">织女 Vega</button>
+        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="goStar(5.92,7.41)">Betelgeyze</button>
+        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="goStar(6.75,16.72)">Sirius</button>
+        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="goStar(0,0)">Bahorgi tengk. nuqtasi γ</button>
+        <button class="btn" style="padding:7px 6px;background:transparent;border:1px solid var(--line-strong);color:var(--text-secondary);font-family:var(--font-sans);font-size:11px;cursor:pointer;border-radius:2px;" onclick="goStar(18.62,38.78)">Vega</button>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">图层</div>
+      <div class="section-label">Qatlamlar</div>
       <div class="check-grid">
-        <label class="check"><input type="checkbox" id="lyr-grid" checked> 天球坐标网</label>
-        <label class="check"><input type="checkbox" id="lyr-ecliptic" checked> 黄道</label>
-        <label class="check"><input type="checkbox" id="lyr-equator" checked> 天赤道</label>
-        <label class="check"><input type="checkbox" id="lyr-stars" checked> 参考星</label>
-        <label class="check"><input type="checkbox" id="lyr-analemma" checked> 日行迹</label>
+        <label class="check"><input type="checkbox" id="lyr-grid" checked> Osmon koordinata to'ri</label>
+        <label class="check"><input type="checkbox" id="lyr-ecliptic" checked> Ekliptika</label>
+        <label class="check"><input type="checkbox" id="lyr-equator" checked> Osmon ekvatori</label>
+        <label class="check"><input type="checkbox" id="lyr-stars" checked> Mos yulduzlar</label>
+        <label class="check"><input type="checkbox" id="lyr-analemma" checked> Quyosh izi</label>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-label">公式</div>
+      <div class="section-label">Formula</div>
       <div class="formula-box">
-        <div class="formula-text">α：赤经（0–24h，从春分点向东）</div>
-        <div class="formula-text">δ：赤纬（-90°~+90°）</div>
-        <div class="formula-text">ε = 23.44°（黄赤交角）</div>
-        <div class="formula-sub">天球坐标与地理坐标类比：<br>赤经≈经度，赤纬≈纬度<br>参考面：天赤道（地球赤道延伸面）</div>
+        <div class="formula-text">α: to'g'ri ko'tarilish (0–24 soat, bahorgi tengk. nuqtasidan sharqqa)</div>
+        <div class="formula-text">δ: deklinatsiya (-90°~+90°)</div>
+        <div class="formula-text">ε = 23,44° (ekliptika og'ish burchagi)</div>
+        <div class="formula-sub">Osmon va geografik koordinatalar o'xshashligi:<br>To'g'ri ko'tarilish ≈ uzunlik, deklinatsiya ≈ kenglik<br>Mos tekislik: osmon ekvatori (Yer ekvatorining davomi)</div>
       </div>
     </div>
   </div>
@@ -140,7 +140,7 @@
     <canvas id="three-canvas"></canvas>
     <div class="kp-overlay" id="kp-overlay" hidden>
       <div class="kp-overlay-header">
-        <span class="kp-overlay-title">知识点说明</span>
+        <span class="kp-overlay-title">Mavzu tushuntirishi</span>
         <button class="kp-overlay-close" onclick="document.getElementById('kp-overlay').hidden=true">×</button>
       </div>
       <div class="kp-overlay-body" id="kp-body">—</div>
@@ -150,30 +150,30 @@
   <!-- RIGHT PANEL -->
   <div class="panel-right">
     <div class="data-section">
-      <div class="data-label">当前天体位置</div>
-      <div class="data-row"><span class="data-row-label">赤经 α</span><span class="data-row-val" id="disp-ra">—</span></div>
-      <div class="data-row"><span class="data-row-label">赤纬 δ</span><span class="data-row-val" id="disp-dec">—</span></div>
-      <div class="data-row"><span class="data-row-label">黄经 λ（近似）</span><span class="data-row-val" id="disp-eclon">—</span></div>
-      <div class="data-row"><span class="data-row-label">黄纬 β（近似）</span><span class="data-row-val" id="disp-eclat">—</span></div>
+      <div class="data-label">Joriy samoviy jism o'rni</div>
+      <div class="data-row"><span class="data-row-label">To'g'ri ko'tarilish α</span><span class="data-row-val" id="disp-ra">—</span></div>
+      <div class="data-row"><span class="data-row-label">Deklinatsiya δ</span><span class="data-row-val" id="disp-dec">—</span></div>
+      <div class="data-row"><span class="data-row-label">Ekliptik uzunlik λ (taxminan)</span><span class="data-row-val" id="disp-eclon">—</span></div>
+      <div class="data-row"><span class="data-row-label">Ekliptik kenglik β (taxminan)</span><span class="data-row-val" id="disp-eclat">—</span></div>
     </div>
 
     <div class="data-section">
-      <div class="data-label">参考天体</div>
+      <div class="data-label">Mos samoviy jismlar</div>
       <div class="star-list">
-        <div class="star-item"><span class="star-name">参宿四 Betelgeuse</span><span class="star-coords">α5h55m δ+7.4°</span></div>
-        <div class="star-item"><span class="star-name">天狼 Sirius</span><span class="star-coords">α6h45m δ-16.7°</span></div>
-        <div class="star-item"><span class="star-name">织女 Vega</span><span class="star-coords">α18h37m δ+38.8°</span></div>
-        <div class="star-item"><span class="star-name">北极星 Polaris</span><span class="star-coords">α2h32m δ+89.3°</span></div>
-        <div class="star-item"><span class="star-name">心宿二 Antares</span><span class="star-coords">α16h30m δ-26.4°</span></div>
-        <div class="star-item"><span class="star-name">春分点 γ</span><span class="star-coords">α0h δ0°</span></div>
+        <div class="star-item"><span class="star-name">Betelgeyze</span><span class="star-coords">α5h55m δ+7.4°</span></div>
+        <div class="star-item"><span class="star-name">Sirius</span><span class="star-coords">α6h45m δ-16.7°</span></div>
+        <div class="star-item"><span class="star-name">Vega</span><span class="star-coords">α18h37m δ+38.8°</span></div>
+        <div class="star-item"><span class="star-name">Shimoliy yulduz (Polaris)</span><span class="star-coords">α2h32m δ+89.3°</span></div>
+        <div class="star-item"><span class="star-name">Antares</span><span class="star-coords">α16h30m δ-26.4°</span></div>
+        <div class="star-item"><span class="star-name">Bahorgi tengk. nuqtasi γ</span><span class="star-coords">α0h δ0°</span></div>
       </div>
     </div>
 
     <div class="struggle-box">
-      <div class="struggle-label">认知冲突</div>
+      <div class="struggle-label">Kutilmagan holat</div>
       <div class="struggle-text">
-        天赤道与地球赤道<strong>不在同一平面</strong>——天赤道是地球赤道投影到天球上的大圆，但天赤道和黄道相交于春分点和秋分点，交角正是黄赤交角 23.44°。<br><br>
-        北极星赤纬 ≈ +89.3°，不是恰好 +90°——真正的天北极会随岁差移动，约26000年一周。
+        Osmon ekvatori Yer ekvatori bilan <strong>bir tekislikda emas</strong> — osmon ekvatori Yer ekvatorining osmon sferasiga proyeksiyasi bo'lgan katta doira, lekin osmon ekvatori va ekliptika bahorgi va kuzgi tengkunlik nuqtalarida kesishadi, kesishish burchagi aynan ekliptika og'ish burchagi 23,44° ga teng.<br><br>
+        Shimoliy yulduzning deklinatsiyasi ≈ +89,3°, aynan +90° emas — haqiqiy osmon shimoliy qutbi pretsessiya tufayli siljiydi, taxminan 26000 yilda bir marta aylanadi.
       </div>
     </div>
   </div>
@@ -193,11 +193,11 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 
 const KP_DOCS = {
-  equatorial:`<strong>赤道坐标系</strong>：以天赤道为基准面，以春分点γ为赤经零点。<br>赤经α：从春分点沿天赤道向东量，单位：时(h)/分/秒，1h=15°。<br>赤纬δ：从天赤道向天北极(+)或天南极(-)量，单位：度。<br>恒星坐标在此系中几乎不变（岁差除外），适合编制星表。`,
-  ecliptic:`<strong>黄道</strong>：地球公转轨道面与天球的交线（大圆）。太阳沿黄道每年运行一圈。黄赤交角 ε=23.44°，这是地球自转轴与公转轨道面法线的夹角，也是季节变化的根源。`,
-  equinox:`<strong>春分点γ</strong>：黄道与天赤道的交点之一，太阳从南向北穿越天赤道处。是赤经、黄经的共同零点。每年约3月21日太阳到达春分点。`,
-  star:`<strong>著名天体坐标</strong>（J2000.0历元）：<br>北极星：α=2h32m，δ=+89°16'（极近天北极）<br>天狼星：α=6h45m，δ=−16°43'（最亮恒星）<br>织女星：α=18h37m，δ=+38°47'<br>牛郎星：α=19h51m，δ=+8°52'`,
-  analemma:`<strong>日行迹（Analemma）</strong>：每天同一地方时在天球上标记太阳位置，一年形成"8字形"曲线。成因：①地球公转速度不均匀（椭圆轨道）②黄赤交角（赤道分量差异）。8字上下对应赤纬的季节变化，左右对应均时差（最大±16分钟）。`
+  equatorial:`<strong>Ekvatorial koordinatalar tizimi</strong>: osmon ekvatorini mos tekislik, bahorgi tengkunlik nuqtasi γ ni to'g'ri ko'tarilish nol nuqtasi sifatida oladi.<br>To'g'ri ko'tarilish α: bahorgi tengk. nuqtasidan osmon ekvatori bo'ylab sharqqa o'lchanadi, birligi: soat(h)/minut/sekund, 1h=15°.<br>Deklinatsiya δ: osmon ekvatoridan osmon shimoliy qutbiga (+) yoki janubiy qutbiga (-) tomon o'lchanadi, birligi: daraja.<br>Yulduzlarning koordinatalari bu tizimda deyarli o'zgarmaydi (pretsessiyadan tashqari), shuning uchun yulduz kataloglari uchun qulay.`,
+  ecliptic:`<strong>Ekliptika</strong>: Yerning orbital tekisligi bilan osmon sferasining kesishish chizig'i (katta doira). Quyosh ekliptika bo'ylab har yili bir marta aylanadi. Ekliptika og'ish burchagi ε=23,44° — bu Yerning aylanish o'qi bilan orbital tekislik normali orasidagi burchak bo'lib, fasllar o'zgarishining asosiy sababidir.`,
+  equinox:`<strong>Bahorgi tengkunlik nuqtasi γ</strong>: ekliptika va osmon ekvatorining kesishish nuqtalaridan biri, Quyosh janubdan shimolga osmon ekvatoridan o'tadigan joy. To'g'ri ko'tarilish va ekliptik uzunlikning umumiy nol nuqtasi. Har yili taxminan 21-martda Quyosh bu nuqtaga yetadi.`,
+  star:`<strong>Mashhur samoviy jismlarning koordinatalari</strong> (J2000.0 epoxasi):<br>Shimoliy yulduz: α=2h32m, δ=+89°16' (osmon shimoliy qutbiga juda yaqin)<br>Sirius: α=6h45m, δ=−16°43' (eng yorqin yulduz)<br>Vega: α=18h37m, δ=+38°47'<br>Altair: α=19h51m, δ=+8°52'`,
+  analemma:`<strong>Quyosh izi (Analemma)</strong>: har kuni bir xil mahalliy vaqtda Quyoshning osmon sferasidagi o'rnini belgilash, bir yilda "8-raqami shaklidagi" egri chiziq hosil bo'ladi. Sababi: ① Yerning aylanib chiqish tezligi bir xil emas (elliptik orbita) ② ekliptika og'ish burchagi (ekvatorial komponent farqi). 8-raqamining tepa-past qismi deklinatsiyaning fasliy o'zgarishiga, chap-o'ng qismi esa vaqt tenglamasiga mos keladi (eng ko'p ±16 daqiqa).`
 };
 document.getElementById('kp-sel').addEventListener('change', e=>{
   const el=document.getElementById('kp-overlay');
@@ -276,7 +276,7 @@ function buildEquator(){
   // Equator label
   const div=document.createElement('div');
   div.style.cssText='font-family:monospace;font-size:11px;color:#6db3d9;background:rgba(5,8,17,.8);padding:2px 6px;border-radius:2px;';
-  div.textContent='天赤道';
+  div.textContent='Osmon ekvatori';
   const lbl=new CSS2DObject(div);
   lbl.position.copy(raDecToXYZ(3,0,DOME_R+0.12));
   equatorGroup.add(lbl);
@@ -316,14 +316,14 @@ function buildEcliptic(){
   eclipticGroup.add(gp);
   const gdiv=document.createElement('div');
   gdiv.style.cssText='font-family:monospace;font-size:11px;color:#f4a853;background:rgba(5,8,17,.8);padding:2px 6px;border-radius:2px;white-space:nowrap;';
-  gdiv.textContent='春分点 γ (α=0h)';
+  gdiv.textContent='Bahorgi tengk. nuqtasi γ (α=0h)';
   const glbl=new CSS2DObject(gdiv);
   glbl.position.set(DOME_R*1.08,0.1,0);
   eclipticGroup.add(glbl);
   // Ecliptic label
   const ediv=document.createElement('div');
   ediv.style.cssText='font-family:monospace;font-size:11px;color:#f4a853;background:rgba(5,8,17,.8);padding:2px 6px;border-radius:2px;';
-  ediv.textContent='黄道';
+  ediv.textContent='Ekliptika';
   const elbl=new CSS2DObject(ediv);
   elbl.position.copy(new THREE.Vector3(0,DOME_R*Math.sin(EPSILON)*1.1,DOME_R*Math.cos(EPSILON)*0.7));
   eclipticGroup.add(elbl);
@@ -332,13 +332,13 @@ buildEcliptic();
 
 // ── Reference stars ────────────────────────────────────────────────────────────
 const STARS=[
-  {name:'天狼 Sirius', ra:6.75, dec:-16.72, col:0x9ecfff, size:0.05},
-  {name:'参宿四 Betelgeuse', ra:5.92, dec:7.41, col:0xff8060, size:0.05},
-  {name:'织女 Vega', ra:18.62, dec:38.78, col:0xaaccff, size:0.05},
-  {name:'牛郎 Altair', ra:19.85, dec:8.87, col:0xffffff, size:0.04},
-  {name:'心宿二 Antares', ra:16.49, dec:-26.43, col:0xff6040, size:0.05},
-  {name:'北极星 Polaris', ra:2.53, dec:89.26, col:0xddddff, size:0.06},
-  {name:'五车二 Capella', ra:5.28, dec:45.99, col:0xffee88, size:0.04},
+  {name:'Sirius', ra:6.75, dec:-16.72, col:0x9ecfff, size:0.05},
+  {name:'Betelgeyze', ra:5.92, dec:7.41, col:0xff8060, size:0.05},
+  {name:'Vega', ra:18.62, dec:38.78, col:0xaaccff, size:0.05},
+  {name:'Altair', ra:19.85, dec:8.87, col:0xffffff, size:0.04},
+  {name:'Antares', ra:16.49, dec:-26.43, col:0xff6040, size:0.05},
+  {name:'Shimoliy yulduz (Polaris)', ra:2.53, dec:89.26, col:0xddddff, size:0.06},
+  {name:'Kapella', ra:5.28, dec:45.99, col:0xffee88, size:0.04},
 ];
 
 function buildStars(){
@@ -376,7 +376,7 @@ function buildAnalemma(){
   analemmaGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:0x7dc48a,transparent:true,opacity:0.7})));
   const div=document.createElement('div');
   div.style.cssText='font-family:monospace;font-size:10px;color:#7dc48a;background:rgba(5,8,17,.8);padding:2px 6px;border-radius:2px;';
-  div.textContent='日行迹（Analemma）';
+  div.textContent='Quyosh izi (Analemma)';
   const lbl=new CSS2DObject(div);
   lbl.position.copy(raDecToXYZ(12.3, -5, DOME_R*0.88));
   analemmaGroup.add(lbl);
